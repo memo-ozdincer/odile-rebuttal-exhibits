@@ -1,5 +1,8 @@
 # ODILE — COLM 2026 rebuttal exhibits
 
+**Full reviewer responses:** [RESPONSES.md](https://github.com/memo-ozdincer/odile-rebuttal-exhibits/blob/main/RESPONSES.md) — the per-reviewer answers, every exhibit below linked inline.
+
+
 Standalone, directly-viewable PDFs (tables + figures) for the rebuttal. Click any link to view it rendered on GitHub.
 
 ## Per-backbone AgentDojo tables (delta-styled: absolute + green/red change badge)
