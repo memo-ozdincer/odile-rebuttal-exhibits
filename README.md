@@ -1,6 +1,6 @@
 # ODILE — COLM 2026 rebuttal exhibits
 
-Standalone, directly-viewable PDFs (tables + figures) for the rebuttal. Click any link to view it rendered on GitHub. See `MANIFEST.md` for the exhibit→reviewer→file map.
+Standalone, directly-viewable PDFs (tables + figures) for the rebuttal. Click any link to view it rendered on GitHub.
 
 ## Per-backbone AgentDojo tables (delta-styled: absolute + green/red change badge)
 - [70B (gold, full comparator set)](https://github.com/memo-ozdincer/odile-rebuttal-exhibits/blob/main/tab_pareto_70b.pdf)
