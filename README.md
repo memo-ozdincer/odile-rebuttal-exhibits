@@ -1,6 +1,6 @@
-# ODILE — COLM 2026 rebuttal exhibits
+# ODILE - COLM 2026 rebuttal exhibits
 
-**Full reviewer responses:** [RESPONSES.md](https://github.com/memo-ozdincer/odile-rebuttal-exhibits/blob/main/RESPONSES.md) — the per-reviewer answers, every exhibit below linked inline.
+**Full reviewer responses:** [RESPONSES.md](https://github.com/memo-ozdincer/odile-rebuttal-exhibits/blob/main/RESPONSES.md) - the per-reviewer answers, every exhibit below linked inline.
 
 
 Standalone, directly-viewable PDFs (tables + figures) for the rebuttal. Click any link to view it rendered on GitHub.
@@ -21,4 +21,4 @@ Standalone, directly-viewable PDFs (tables + figures) for the rebuttal. Click an
 - [AD injection styles](https://github.com/memo-ozdincer/odile-rebuttal-exhibits/blob/main/t_ad_injection_styles.pdf) · [augmentation shift](https://github.com/memo-ozdincer/odile-rebuttal-exhibits/blob/main/t_augmentation_recipe_shift.pdf) · [author attacks](https://github.com/memo-ozdincer/odile-rebuttal-exhibits/blob/main/t_author_attacks_full.pdf) · [cross-model master](https://github.com/memo-ozdincer/odile-rebuttal-exhibits/blob/main/t_crossmodel_master.pdf) · [cross-model per-suite](https://github.com/memo-ozdincer/odile-rebuttal-exhibits/blob/main/t_crossmodel_persuite.pdf) · [InjecAgent full](https://github.com/memo-ozdincer/odile-rebuttal-exhibits/blob/main/t_injecagent_full.pdf) · [layer ablation](https://github.com/memo-ozdincer/odile-rebuttal-exhibits/blob/main/t_layer_ablation.pdf) · [MELON ×2](https://github.com/memo-ozdincer/odile-rebuttal-exhibits/blob/main/t_melon_attack_breakdown.pdf) · [stacking](https://github.com/memo-ozdincer/odile-rebuttal-exhibits/blob/main/t_stacking_matrix.pdf)
 
 ## Figures directory
-[/figures](https://github.com/memo-ozdincer/odile-rebuttal-exhibits/blob/main/figures) — loss panels, per-injection ASR, trace/mechanism figures.
+[/figures](https://github.com/memo-ozdincer/odile-rebuttal-exhibits/blob/main/figures) - loss panels, per-injection ASR, trace/mechanism figures.

@@ -1,4 +1,4 @@
-# TensorTrust — real attack prompts (verbatim from the benchmark)
+# TensorTrust - real attack prompts (verbatim from the benchmark)
 
 The guardian-bot game: the attacker tries to make a defended model reveal a password (extraction) or override its persona (hijack). Entirely different mechanic from agentic tool-injection. ODILE cuts extract-leak from 78–92% to 1–44% across backbones.
 
