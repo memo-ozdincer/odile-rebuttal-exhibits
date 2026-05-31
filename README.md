@@ -2,6 +2,9 @@
 
 **Full reviewer responses:** [RESPONSES.md](https://github.com/memo-ozdincer/odile-rebuttal-exhibits/blob/main/RESPONSES.md) - the per-reviewer answers, every exhibit below linked inline.
 
+**Attack examples & traces:** rendered PDFs in [examples_pdf/](examples_pdf/) and [traces_pdf/](traces_pdf/); raw benchmark JSON in [examples_json/](examples_json/). Index: [INJECTION_EXAMPLES.md](INJECTION_EXAMPLES.md).
+
+
 
 Standalone, directly-viewable PDFs (tables + figures) for the rebuttal. Click any link to view it rendered on GitHub.
 
