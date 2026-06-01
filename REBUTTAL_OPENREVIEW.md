@@ -61,9 +61,10 @@ We thank the reviewer: defense comparison, a cleaner tradeoff table, cross-frame
 
 **1. "[...] compare more directly against recent model-level defenses such as Meta SecAlign and firewall/sanitizer-style defenses [...] clarify the novelty of ODILE relative to these works."**
 **Novelty:** ODILE is a representation-level LoRA at 1x inference cost (no second pass, no input rewriting), trained by a paired-trace contrast on the model's own harmful direction.
-**General:** across our five benchmarks ODILE holds the low-ASR, capability-preserving corner of the field; the [cross-benchmark comparator]({ANON}/tab_comparator_8b.pdf) places it against ReasAlign (Li et al. 2026), which matches ASR at ~13pp benign cost.
-**vs Meta-SecAlign** (Chen et al. 2026): 0.01% vs 2.11% ASR at 1x cost ([70B table]({ANON}/tab_pareto_70b.pdf)). The key differentiator is the ReAct agentic format: Meta-SecAlign cannot emit valid ReAct tool calls on InjecAgent (88–95% unparseable, so its low ASR is broken output, not defense), while ODILE stays in valid ReAct format ([figure]({ANON}/fig_react_jam_odile.pdf)).
+**vs Meta-SecAlign** (Chen et al. 2026), head-to-head at Llama-3.3-70B. On **AgentDojo**, ODILE holds 0.01% ASR vs Meta-SecAlign's 2.11% (≈200x lower) at 1x cost, while Meta-SecAlign retrains the full model and carries higher benign utility (62.6% vs 51.5%); the two sit at different points on the security-utility frontier ([70B table]({ANON}/tab_pareto_70b.pdf)). On **InjecAgent**, ODILE holds ASR-all ≤ 0.20% across all four families vs Meta-SecAlign's 0.2–2.6% ([InjecAgent table]({ANON}/t_injecagent_full.pdf)).
+**Separately, format robustness:** ODILE is also robust to format shift where Meta-SecAlign is not. On InjecAgent's ReAct format Meta-SecAlign cannot emit valid tool calls (88–95% unparseable, so its low ASR is broken output, not defense), whereas ODILE stays in valid ReAct format and jams identically across ReAct and delimiter-wrapped formats ([figure]({ANON}/fig_react_jam_odile.pdf)).
 **vs firewall/sanitizer** (Bhagwatkar et al. 2026): static parity (2.1% ASR), but it costs −6.2pp benign utility plus an extra LLM call, and is cracked 15/48 under adaptive attack vs ODILE's 0/64 ([firewall table]({ANON}/T_firewall.pdf)).
+**Broader field:** the [cross-benchmark comparator]({ANON}/tab_comparator_8b.pdf) places ODILE against ReasAlign (Li et al. 2026) on all five benchmarks at once (ReasAlign matches ASR at ~13pp benign cost).
 ODILE is preferable when adaptive robustness, 1x cost, and benign preservation matter together.
 
 **2. "Table 2 [...] mixes different models, utility definitions, and defense assumptions [...] add a cleaner comparison table [...]."**
@@ -74,6 +75,8 @@ We add four out-of-distribution benchmarks across different frameworks, all reac
 
 **4. "The defense behavior also feels brittle [...] unclear what happens in a real agent loop with retries, validators, or tool-call repair logic."**
 The jam is by design, not a failure. We have prepared a matched trace for reference ([trace]({ANON}/traces_pdf/trace_base_executes_vs_odile_jams.pdf)): where the base calls `update_password`, ODILE emits no parseable tool call and never produces the attacker action (0/5805 distinct WASP paraphrases). In a real loop, a retry re-prompts with the same injection and re-jams (the strict-deny endpoint); deterministic validators and tool-call repair compose on top, since they act on the emitted call, not the representation. A repair loop that reformulates the injection is itself an adaptive attacker, which our adaptive sweep already tests (TAP/PAIR 0/64); the strongest such test, RL-based attacks (Nasr et al. 2025), is a camera-ready commitment, and we expect ODILE to hold.
+
+*(DefG exceeds 5000 characters, so post it as two comments. Everything above this line is comment 1 of 2; everything below is comment 2 of 2.)*
 
 **Q. "Does the method defend against data-exfiltration attacks where the harmful action looks like normal information retrieval [...]?"**
 Yes. InjecAgent's `ds_base` and `ds_enhanced` families are exfiltration via a legitimate-looking tool call (retrieve X, then email it to the attacker); ODILE drives both to 0.00% at 70B ([32 real attacks]({ANON}/examples_pdf/injecagent_data_exfil.pdf), e.g. saved addresses sent via `GmailSendEmail`).
