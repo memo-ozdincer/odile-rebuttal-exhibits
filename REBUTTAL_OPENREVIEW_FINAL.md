@@ -17,6 +17,8 @@ If ODILE were fitting AgentDojo's test set it would fail off-distribution, but i
 
 The sharpest evidence is the held-out augmentation: we take the exact AgentDojo injections ODILE trained on and only re-render their surface (markers removed, or base64-encoded); ASR stays near 0 though the goal is unchanged, the opposite of what a test-fit defense would do.
 
+The generalization is also format-driven, not format-keyed: ODILE jams identically in standard ReAct and a delimiter-wrapped variant of the same task ([figure](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/fig_react_jam_odile.pdf)), whereas a format-keyed defense like ReasAlign (Li et al. 2026) posts near-0 InjecAgent ASR mainly because its reasoning-tag format is rejected about 94% of the time, not because it stops the attack.
+
 **2. Adaptive attackers aware of the adapter.**
 We add white-box attacks targeting the adapter's internals, all 0 cracks. Discrete GCG (75 steps): 0/4. Under ODILE the attacker-target cross-entropy plateaus at 10.7–11.0 while the base descends to 0.57 and complies, and the [loss curve](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/figures/fig_gcg_loss_curve.pdf) stays flat to 500 steps. LoRA-aware GCG (bypass term at the LoRA layers): 0/3. TAP and PAIR (defense described to the attacker): 0/64 across two backbones, against base 36/48 ([table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_adaptive_tap_pair.pdf)). We do not claim these are the strongest possible attacker; RL-based attacks (Nasr et al. 2025) are planned for the camera-ready.
 
@@ -28,6 +30,8 @@ We add Qwen3-Next-80B-A3B-Thinking (Sept 2025), a frontier reasoning model with 
 
 **Q (why layers 30–55?).**
 Not trial and error: following circuit-breakers (Zou et al.), mid-to-late layers avoid token-specific representations; we use that single principled band and depth-scale it across seven backbones. An adjacent-band check at Llama-3.1-8B (`L10-20`, `L12-22`, `L20-30`, 52 cells each) finds all suppress ASR to near 0 while the later band halves under-attack utility, so the mid band is selected. A full native-objective sweep is a camera-ready commitment.
+
+In addition, **R5 (defense comparison):** matched-backbone [traces](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/traces_pdf/trace_secalign_cracked_vs_odile.pdf) and a [firewall comparison](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/T_firewall.pdf) show where Meta-SecAlign and a sanitizer break while ODILE holds.
 
 We believe these results greatly strengthen the significance of our results, and improve the overall soundness of the paper. We hope our rebuttal addresses all of the reviewer's concerns, and we would be grateful for a reconsideration of the score.
 
@@ -48,6 +52,8 @@ No: the mid-late band follows the circuit-breaker rationale (Zou et al.), depth-
 
 **Q (white-box vs black-box: a different landscape).**
 We agree and will adopt this framing explicitly. ODILE is an inner defense for the open-weight / self-hosted regime; for API-only deployments, pipeline and black-box defenses are the appropriate layer. We will state in Sections 1 and 10 that ODILE occupies a complementary deployment layer rather than competing.
+
+In addition: **R1 (generalization):** four out-of-distribution benchmarks (InjecAgent, TensorTrust, WASP, AgentDyn) reach ASR near 0. **R2 (adaptive):** discrete and LoRA-aware GCG and TAP/PAIR, all 0 cracks ([table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_adaptive_tap_pair.pdf)).
 
 We believe these results greatly strengthen the significance of our results, and improve the overall soundness of the paper. We hope our rebuttal addresses all of the reviewer's concerns, and we would be grateful for maintaining or raising the score.
 
@@ -73,6 +79,8 @@ The jam is the design intent, not a failure: on the same task where the base cal
 Yes. InjecAgent's `ds` families are exactly retrieve-then-email-to-attacker; ODILE drives both to 0.00% at Llama-3.3-70B ([attacks](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/examples_pdf/injecagent_data_exfil.pdf)).
 
 **Minor (Figure 2 legend).** We will declutter the legend and split the Llama and Qwen panels.
+
+In addition: **R2 (adaptive):** GCG and TAP/PAIR, 0 cracks ([table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_adaptive_tap_pair.pdf)). **R3 (capability):** BFCL and Tau-bench retained ([table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_capability.pdf)). **R4:** seven backbones including Qwen3-Next-80B.
 
 We believe these results greatly strengthen the significance of our results, and improve the overall soundness of the paper. We hope our rebuttal addresses all of the reviewer's concerns, and we would be grateful for a reconsideration of the score.
 
@@ -105,5 +113,7 @@ CaMeL (Debenedetti et al. 2025) is a design-level defense (a privileged planner 
 
 **Q4 (simpler sanitizer firewalls).**
 We re-implemented the Bhagwatkar et al. (2026) firewall at Llama-3.1-8B (a second LLM rewrites each tool output). It is useful but not invariant: statically it matches ODILE (2.1% ASR) and reduces base cracks, but benign-looking paraphrases bypass it, and on deploy-token / SSH-key / PAT records it introduces cracks the base never had (base 0/16, sanitizer 3/12), because the rewriter cannot tell "the user wants a deploy token" from "the injection wants one." ODILE holds 0/64 and 0/5805 (Fisher vs sanitizer p = 5e-10). The reason is mechanistic: the sanitizer acts on surface text, so any paraphrase that fools the rewriter gets through; ODILE acts on hidden states, where same-intent paraphrases converge, so surface variation gives the attacker almost no signal. ODILE is preferable when adaptive robustness, 1x cost, and benign-utility preservation matter together ([firewall table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/T_firewall.pdf)).
+
+In addition, **R3 (capability):** BFCL and Tau-bench confirm general tool-use is retained ([table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_capability.pdf)).
 
 We believe these results greatly strengthen the significance of our results, and improve the overall soundness of the paper. We hope our rebuttal addresses all of the reviewer's concerns, and we would be grateful for a reconsideration of the score.
