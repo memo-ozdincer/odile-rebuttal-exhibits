@@ -103,7 +103,7 @@ We add four out-of-distribution benchmarks across different agent frameworks, al
 The worry is that the degenerate (token-soup) output could still trigger a harmful action; it does not, by design. Under attack ODILE emits no parseable tool call, so the harness has nothing to execute and the attacker action is never produced. On the same task where the base model calls `update_password`, ODILE reads the file and emits token-soup with no tool call ([trace]({ANON}/traces_pdf/trace_base_executes_vs_odile_jams.pdf)). For the three mechanisms the reviewer names:
 - **Retries:** the retry-on-error handler re-prompts the model with the same injection (the strict-deny endpoint), so it jams again rather than complying.
 - **Validators and tool-call repair:** both act on the emitted call, not on the representation, so they compose on top of ODILE rather than fighting it.
-- **A repair loop that iteratively reformulates the injection** is itself an adaptive attacker, which is exactly the setting we run TAP and PAIR to probe (0/64); the strongest such test, RL-based attacks (Nasr et al. 2025), is a camera-ready commitment, and we expect ODILE to hold.
+- **A repair loop that iteratively reformulates the injection** is itself an adaptive attacker, which is exactly the setting we run TAP and PAIR to probe (0/64).
 
 Critically, the jam never produces the attacker action: 0/5805 distinct WASP paraphrases (trace-validated), and any residual `send_money` has a degenerate recipient that never resolves to the attacker IBAN ([trace]({ANON}/traces_pdf/trace_secalign_cracked_vs_odile.pdf)).
 
