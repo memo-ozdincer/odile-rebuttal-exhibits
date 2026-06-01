@@ -1,0 +1,265 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./responses.tex
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/base/article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/base/size11.clo))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/geometry/geometry.sty
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/graphics/keyval.sty)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/iftex/ifvtex.sty
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/iftex/iftex.sty)))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/base/fontenc.sty)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/base/inputenc.sty)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/xcolor/xcolor.sty
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/graphics-cfg/color.cfg)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/graphics-def/pdftex.def))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/enumitem/enumitem.sty)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/microtype/microtype.sty
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/microtype/microtype-pdftex.def)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/microtype/microtype.cfg))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/hyperref/hyperref.sty
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/ltxcmds/ltxcmds.sty)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/pdftexcmds/pdftexcmds.sty
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/infwarerr/infwarerr.sty))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/kvsetkeys/kvsetkeys.sty)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/kvdefinekeys/kvdefinekeys.sty)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/pdfescape/pdfescape.sty)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/hycolor/hycolor.sty)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/letltxmacro/letltxmacro.sty)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/auxhook/auxhook.sty)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/kvoptions/kvoptions.sty)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/hyperref/pd1enc.def)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/hyperref/hyperref-langpatches.def)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/intcalc/intcalc.sty)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/etexcmds/etexcmds.sty)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/hyperref/puenc.def)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/url/url.sty)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/bitset/bitset.sty
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/bigintcalc/bigintcalc.sty))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/base/atbegshi-ltx.sty))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/hyperref/hpdftex.def
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/base/atveryend-ltx.sty)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/rerunfilecheck/rerunfilecheck.sty
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/uniquecounter/uniquecounter.sty)))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/l3backend/l3backend-pdftex.def)
+No file responses.aux.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/co
+ntext/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/microtype/mt-cmr.cfg)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/hyperref/nameref.sty
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/refcount/refcount.sty)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/gettitlestring/gettitlestring.sty))
+
+LaTeX Warning: No \author given.
+
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/base/t1cmtt.fd)
+
+! Package inputenc Error: Unicode character ≤ (U+2264)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.24 ...tbf{≤0.15\% on every one of 7 backbones}
+                                                   (\href{https://github.com...
+
+
+! Package inputenc Error: Unicode character − (U+2212)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.24 ...-8B, attack ASR 22.1 → \textbf{0.0} (−
+                                                  22.1), n=560, Fisher p\tex...
+
+
+! Package inputenc Error: Unicode character λ (U+03BB)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 ... LoRA layers, to neutralize the LoRA) - λ
+                                                  \_bypass ∈ \{1, 10, 100\...
+
+
+! Package inputenc Error: Unicode character ∈ (U+2208)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 ..., to neutralize the LoRA) - λ\_bypass ∈
+                                                   \{1, 10, 100\}, 50 steps ...
+
+[1{/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/var/lib/texmf/fonts/map/p
+dftex/updmap/pdftex.map}]
+
+! Package inputenc Error: Unicode character − (U+2212)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.41 ...Llama-3.1-8B 73.98 → \textbf{73.35} (−
+                                                  0.63); Qwen-2.5-7B 74.98 �...
+
+
+! Package inputenc Error: Unicode character τ (U+03C4)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.42 \item \textbf{τ-bench airline}
+                                     (n=50 tasks, single trial → direction...
+
+
+! Package inputenc Error: Unicode character − (U+2212)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.42 ...Llama-3.1-8B 42.00 → \textbf{38.78} (−
+                                                  3.22).
+
+! Package inputenc Error: Unicode character τ (U+03C4)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.45 ... τ-bench across all remaining backbones.}
+                                                  \par
+
+! Package inputenc Error: Unicode character − (U+2212)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.60 ...nside: AD-standard ASR +0.18pp, benign −
+                                                  0.37pp; every worsened sam...
+
+
+! Package inputenc Error: Unicode character ≈ (U+2248)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.62 ...et - why?} Both objectives drive ASR→≈
+                                                  0, so the security result ...
+
+[2]
+
+! Package inputenc Error: Unicode character − (U+2212)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.81 ...y (2.1\% ASR), but the sanitizer costs −
+                                                  6.2pp benign utility plus ...
+
+
+! Package inputenc Error: Unicode character ≈ (U+2248)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.86 ... TensorTrust + WASP + AgentDyn, all ASR≈
+                                                  0 with the same recipe, on...
+
+[3] [4] [5] (./responses.aux)
+
+Package rerunfilecheck Warning: File `responses.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information){/cvmfs/soft.computecanada.
+ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super
+-t1.enc}{/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dis
+t/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</cvmfs/soft.computecanada.ca/gento
+o/2023/x86-64-v3/usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb>
+</cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/fonts/
+type1/public/cm-super/sfbx1200.pfb></cvmfs/soft.computecanada.ca/gentoo/2023/x8
+6-64-v3/usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></cvmfs/s
+oft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/fonts/type1/pub
+lic/cm-super/sfrm1095.pfb></cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/u
+sr/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></cvmfs/soft.compu
+tecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/fonts/type1/public/cm-su
+per/sftt1095.pfb>
+Output written on responses.pdf (5 pages, 176932 bytes).
+Transcript written on responses.log.
