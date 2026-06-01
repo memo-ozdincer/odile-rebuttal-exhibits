@@ -1,0 +1,150 @@
+# ODILE, OpenReview-ready rebuttal (structured, anonymized)
+
+**How to use this doc.** Paste one section per reviewer into OpenReview. Exhibit links use the placeholder `https://anonymous.4open.science/r/odile-anon-exhibits-82D6` = your anonymous.4open.science base URL (e.g. `https://anonymous.4open.science/r/odile-exhibits-XXXX`). Do a find-replace of `https://anonymous.4open.science/r/odile-anon-exhibits-82D6` once you have the repo ID. NO personal-repo links, NO name/school anywhere. Greeting/closing are formulaic (Simko); concerns are quote-trimmed (`[...]`); each reviewer gets a "see also" R-list of the other experiments.
+
+**Shared "see also" block (R1-R5)** (paste after the per-concern answers for every reviewer, dropping any R that *is* their main concern:
+> In addition, we invite the reviewer to consult the rest of our supplementary rebuttal experiments:
+> - **R1 (Generalization):** four out-of-distribution benchmarks (InjecAgent, TensorTrust, WASP, AgentDyn) where ODILE drives ASR to ≈0.
+> - **R2 (Adaptive robustness):** discrete + LoRA-aware GCG and TAP/PAIR semantic attacks, all 0 cracks.
+> - **R3 (Capability):** BFCL and τ-bench confirm general tool-use is retained.
+> - **R4 (Model coverage):** seven backbones including the Sept-2025 reasoning model Qwen3-Next-80B.
+> - **R5 (Defense comparison):** matched-backbone traces vs Meta-SecAlign and a firewall/sanitizer, showing where they break and ODILE holds.
+
+---
+
+## FoEk (Rating 3)
+
+We thank the reviewer for their constructive feedback, which helps strengthen our paper. Below, we address the questions they raised.
+
+**1. "There is clear data leakage [...]. I cannot tell whether ODILE learns a real prompt-injection defense or fitting on test set."**
+A memorized adapter fails on any attack distribution it did not train on; we show it does not, on four benchmarks and on held-out attack-augmentations, each following the same structure (result, sample size and significance, comparison, and a concrete demonstration that it is genuinely different).
+- **InjecAgent** (different benchmark, ReAct format, attack domains absent from training): ASR falls to 0.0 on every backbone (worst case 0.15), n=1054/family, Wilson upper bound 0.35% at Qwen-2.5-14B. ReasAlign also reaches ≈0 ASR, but by over-jamming (valid-rate 0.3% against ODILE's 43.7%). The attacks share no surface form with training: we invite the reviewer to compare the [124 real InjecAgent attacks](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/examples_pdf/injecagent_attacks.pdf) against [the AgentDojo injections ODILE trained on](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/examples_pdf/agentdojo_train_injections.pdf). Full numbers: [InjecAgent table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/T3b_injecagent_crossmodel.pdf).
+- **TensorTrust** (a different mechanic, guardian-bot password extraction): extract-leak falls from 78–92% to 1–44% across backbones (Qwen-2.5-14B from 82 to 1), n=300/cell; benign coherence is preserved at ~100% on neutral pre-prompts. [91 real attacks](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/examples_pdf/tensortrust_attacks.pdf); full numbers in the [TensorTrust table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/T4_TT_headline.pdf).
+- **WASP** (web-agent injection): the attacker-action rate falls from 12.5% to 0/239 verified-tight (0/5805 per individual paraphrase attempt, Fisher p≈1e-9), against base 25/200 and a sanitizer at 8/160. [21 real attacker goals](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/examples_pdf/wasp_attacker_goals.pdf); full numbers in the [WASP table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_T_wasp.pdf). (Our setup preserves WASP's records and injection templates without the live browser loop; the full containerized version is a camera-ready commitment.)
+- **AgentDyn** (a dynamic benchmark on three suites absent from AgentDojo (GitHub, Daily-Life, Shopping): on Qwen3-8B the attack genuinely lands on the base agent (22.1%, n=560) and ODILE drives it to 0.0% (Fisher p<1e-12). [How it differs, with real tasks and goals](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/examples_pdf/agentdyn_difference.pdf); full numbers in the [AgentDyn table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_agentdyn.pdf).
+- **AgentDojo attack-augmentations absent from training** (the same goal rendered with the injection markers removed, or base64-encoded): ASR remains ≈0 on surface forms the adapter never saw. [The augmented forms](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/examples_pdf/agentdojo_heldout_augmentations.pdf).
+
+If ODILE were fitting AgentDojo's test set, none of these five would hold.
+
+**2. "The attack setting is too weak [...]. does not test adversarial attackers aware of the adapter."**
+We add stronger, defense-aware dynamic attacks that target the adapter's internals. These are not the strongest conceivable adaptive attacker, but they directly probe the four axes one would expect a representation defense to be tested on:
+- **Discrete GCG** (white-box, full weight, adapter, and gradient access): a 20-token adversarial suffix optimized for 75 steps at search-width 128. 0/4 crackable pairs. The attacker-target cross-entropy plateaus near 10.7–11.0 and never descends into the compliance regime, whereas on the same pairs the undefended base reaches 0.57 and complies, so the attack mechanism works and ODILE is what stops it. [GCG table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/T_GCG.pdf).
+- **LoRA-aware GCG** (the loss adds a bypass term penalizing the adapter's hidden-state deviation from base at the exact LoRA layers): λ_bypass ∈ {1, 10, 100}, 50 steps. 0/3; the bypass term shrinks the adapter-vs-base gap by ~25% but cross-entropy never approaches compliance (from ~12.0 to ~11.9). This covers the adapter-aware and layer-range-aware axes.
+- **TAP and PAIR** (semantic attackers given ODILE's objective): 0/64 across two backbones, comprising 0/48 at the standard tree-search budget plus 0/16 when every surviving cell is re-attacked with a deeper tree (depth 5, branching 3, width 6, 2 parallel streams, against the standard depth 3, branching 2, width 4, 1 stream), against base 36/48 and a sanitizer firewall 15/48 on the identical cells. Base and sanitizer cracking those exact cells is the positive control. [TAP/PAIR table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_adaptive_tap_pair.pdf). This covers the objective-aware axis.
+- **Mask-aware:** the completion-window mask is a training-time loss localization, not an input-side filter, so there is nothing for the attacker to route around.
+
+We do not claim these are the strongest possible adaptive attacker; in particular, we plan to evaluate reinforcement-learning-based attacks (Nasr et al. 2025, "The Attacker Moves Second", arXiv:2510.09023) after the rebuttal, alongside multi-suffix and transfer-ensemble GCG and a broader sweep across all backbones.
+
+**3. "Benign capability evaluation is narrow [...] such as BFCL and Tau-Bench."**
+We add exactly the two benchmarks named, reporting base and ODILE with the change in parentheses:
+- **BFCL** (non-live AST, n=1240/cell): Llama-3.1-8B from 73.98 to 73.35 (−0.63); Qwen-2.5-7B from 74.98 to 75.12 (+0.14, a gain). General tool-call capability is retained.
+- **τ-bench airline** (n=50 tasks, single trial, so directional): Llama-3.1-8B from 42.00 to 38.78 (−3.22).
+
+Full per-backbone capability (with AlpacaEval, GSM8K, IFEval) is in the [capability table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_capability.pdf). Camera-ready: BFCL and τ-bench across all remaining backbones.
+
+**4. "Model selection is outdated [...] do not test newer reasoning models."**
+We add Qwen3-Next-80B-A3B-Thinking (September 2025), a frontier reasoning model with nonstandard (Gated-DeltaNet) attention; ODILE transfers with the attention-path adjustments ([Qwen3-Next table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_pareto_qnext.pdf), [cross-model](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/T2_crossmodel_AD.pdf)). The Qwen3-Next results shown are on the important_instructions family. Camera-ready: the full 52-cell AgentDojo grid on Qwen3-Next across all four suites, with its TensorTrust and AgentDyn cells.
+
+**Q. "Why is LoRA only applied on layers 30–55?"**
+Not by trial and error: following circuit-breakers (Zou et al.), mid-to-late layers avoid token-specific representations; we use that single principled band and depth-scale it across all seven backbones with no per-backbone retuning, which is itself why the recipe transfers. A full layer-band ablation is a camera-ready commitment.
+
+In addition, we invite the reviewer to consult the rest of our supplementary rebuttal experiments:
+- **R5 (Defense comparison):** matched-backbone traces vs Meta-SecAlign and a firewall/sanitizer, showing where they break and ODILE holds ([traces](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/traces_pdf/trace_secalign_cracked_vs_odile.pdf), [firewall table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/T_firewall.pdf)).
+
+We believe these results greatly strengthen the significance of our results and improve the overall soundness of the paper. We hope our rebuttal addresses the reviewer's concerns, and we would be grateful for a reconsideration of the score.
+
+---
+
+## FSAe (Rating 7)
+
+We thank the reviewer for their constructive feedback, which helps strengthen our paper. Below, we address the questions they raised.
+
+**Q (worsened pairs). "(a) ideas on how to handle them. (b) if and how other previous methods were able to handle this. (c) were any experiments run including these pairs and what was the ASR [...]."**
+(a) These three banking pairs are structurally ambiguous: the attacker IBAN equals the legitimate recipient, so the harmful and benign twins are byte-identical and give the contrastive objective no signal. We handle them by a hard-coded structural exclusion (target-collision in the task definition), not a per-sweep statistic. (b) Prior non-paired methods do not surface this, because it is specific to paired-trace construction. (c) A controlled include-versus-exclude ablation (identical recipe, the three pairs the only difference) shows inclusion is pure downside: AD-standard ASR rises by 0.18pp and benign utility falls by 0.37pp, and every worsened sample traces to that one task. Camera-ready: a stacking section, since deterministic post-execution validators (for example IBAN allowlists) are the right complement for this genuinely-ambiguous class.
+
+**Q. "[...] Qwen MSE was better than Qwen Triplet, why?"**
+Both objectives drive ASR to ≈0, so the security result is not loss-specific; the difference is in consistency. The MSE objective behaves consistently across backbones, whereas the triplet objective is inconsistent, strong on some backbones and weaker on others, which is why we report MSE as the headline and triplet as an ablation. The likely cause is that triplet relies on absolute distance margins, and the hidden-state magnitudes differ substantially across model families (Qwen-2.5/Qwen3 against Llama; cf. massive activations, Sun et al. 2024), so a margin calibrated on one family is mis-scaled on another, while MSE does not depend on those magnitudes in the same way. We do not dwell on it, because both objectives reach the same security endpoint; the consistency difference is simply our reason for the headline/ablation split.
+
+**Q. "[...] the change in layer range showed significant effect [...]. Was it pure trial and error?"**
+No: the mid-late band follows the circuit-breaker rationale (Zou et al.), depth-scaled and transfer-validated across seven backbones. A full native layer-band sweep is a camera-ready commitment.
+
+**Q (whitebox/blackbox "different landscape").**
+We agree and will adopt this framing explicitly. ODILE is an inner defense for the open-weight / self-hosted regime; for API-only deployments, pipeline and blackbox defenses are the appropriate layer. We will state in §1 and §10 that it occupies a different deployment layer, complementary rather than competing. We thank the reviewer for the framing.
+
+In addition, we invite the reviewer to consult the rest of our supplementary rebuttal experiments:
+- **R1 (Generalization):** four out-of-distribution benchmarks (InjecAgent, TensorTrust, WASP, AgentDyn) where ODILE drives ASR to ≈0.
+- **R2 (Adaptive robustness):** discrete and LoRA-aware GCG and TAP/PAIR semantic attacks, all 0 cracks.
+- **R4 (Model coverage):** seven backbones including the September-2025 reasoning model Qwen3-Next-80B.
+
+We believe these results greatly strengthen the significance of our results and improve the overall soundness of the paper. We hope our rebuttal addresses the reviewer's concerns, and we would be grateful for maintaining or raising the score.
+
+---
+
+## DefG (Rating 4)
+
+We thank the reviewer for their constructive feedback, which helps strengthen our paper. Below, we address the questions they raised.
+
+**1. "The paper should compare more directly against recent model-level defenses such as Meta SecAlign and against strong firewall/sanitizer-style defenses. Could the authors clarify the novelty of ODILE [...]?"**
+The three methods act at different layers of the stack:
+- **Meta-SecAlign** changes the weights: it fine-tunes the whole model (DPO) to obey a privileged-instruction hierarchy, so the model learns to ignore content wrapped in special data-delimiters. The defense lives in what the model was taught about which tokens to trust.
+- **A firewall/sanitizer** acts on the inputs: a separate pass inspects or rewrites each tool output before the model sees it. The defense lives outside the model, in a second component.
+- **ODILE** acts on the model's internal representations: a small LoRA reshapes the hidden states on the intent-formation window so that a harmful-intent trajectory collapses into a non-actionable (jam) state. Nothing is rewritten and no second model runs; the defense is inside the same single forward pass, learned by contrasting the model's own harmful against benign twin traces.
+
+So the novelty is where and how the defense operates: representation-level, single-pass, trained on the model's own behavior rather than on token-trust rules or an external filter. That design is also what gives the practical advantages: 1× inference cost (against Meta-SecAlign's retrain and the firewall's extra pass), and robustness where the others break. Meta-SecAlign is delimiter-keyed and so breaks under format shift (on the marker-removed augmentation it leaks 3.38% where ODILE holds 0.00% [table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/t_ad_injection_styles.pdf); a [matched-backbone trace](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/traces_pdf/trace_secalign_cracked_vs_odile.pdf) shows it executing send_money to the attacker where ODILE jams), and the recognition-based firewall is bypassed by benign-looking reframes under adaptive attack (cracked 15/48 where ODILE holds 0/64). We will add a detailed comparison with recent model-level defenses in our latest manuscript.
+
+**2. "Table 2 is a bit hard to interpret. It mixes different models, utility definitions, and defense assumptions [...]." / "[...] add a cleaner comparison table where everything is on the same model and same utility metric."**
+We replace Table 2 with one table per backbone, each on a single model with a single metric pair (ASR against benign utility): [70B](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_pareto_70b.pdf), [8B](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_pareto_8b.pdf), [Qwen-2.5-7B](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_pareto_q25_7b.pdf), [Qwen-2.5-14B](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_pareto_q25_14b.pdf), [Qwen3-32B](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_pareto_q3_32b.pdf). On under-attack utility: we report benign (no-attack) utility as the capability axis, and treat under-attack utility as appendix-only by design, because ODILE jams under injection (it removes the attacker tool call), so under-attack utility measures residual non-malicious throughput rather than task completion. We will make the distinction explicit in the body.
+
+**3. "Single-benchmark focus. The evaluation is centered on AgentDojo [...]."**
+We report the same generalization evidence as above: InjecAgent, TensorTrust, WASP, and AgentDyn, all reaching ASR ≈0 with the same recipe, on benchmarks where the attack genuinely lands on the base model (for example AgentDyn on Qwen3-8B, from 22.1% to 0.0%). ([InjecAgent](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/T3b_injecagent_crossmodel.pdf), [TensorTrust](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/T4_TT_headline.pdf), [WASP](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_T_wasp.pdf), [AgentDyn](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_agentdyn.pdf)).
+
+**4. "The defense behavior also feels brittle [...]. it is unclear what happens in a real agent loop with retries, validators, or tool-call repair logic."**
+The jam is the design intent, not a side effect, and one can read exactly what it looks like: on the same task where the base model calls update_password, ODILE reads the file and emits token-soup with no parseable tool call ([trace](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/traces_pdf/trace_base_executes_vs_odile_jams.pdf)). In a real loop, the retry-on-error handler fires and the model is re-prompted with the injection rather than re-supplied, which is the strict-deny endpoint. Critically, the jam never accidentally produces the attacker action: across the adaptive sweep the agent emits no attacker tool call on any cell (0/5805 on WASP, trace-validated), and where it does emit a send_money the recipient argument is degenerate and never resolves to the attacker IBAN ([trace](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/traces_pdf/trace_secalign_cracked_vs_odile.pdf)). Deterministic post-execution validators stack naturally on top.
+
+**Q. "Does the method defend against data-exfiltration attacks where the harmful action looks like normal information retrieval [...]?"**
+Yes. InjecAgent's ds_base and ds_enhanced families are exactly exfiltration via a legitimate-looking tool call (retrieve X, then email or send it to the attacker); we invite the reviewer to consult the [32 real data-stealing attacks](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/examples_pdf/injecagent_data_exfil.pdf) (genetic data, saved addresses, financial records sent via GmailSendEmail). ODILE drives both families to 0.00% at Llama-3.3-70B ([InjecAgent](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/T3b_injecagent_crossmodel.pdf)).
+
+**Minor (Figure 2 legend).** We will declutter the legend and split the Llama and Qwen panels.
+
+In addition, we invite the reviewer to consult the rest of our supplementary rebuttal experiments:
+- **R2 (Adaptive robustness):** discrete and LoRA-aware GCG and TAP/PAIR semantic attacks, all 0 cracks ([GCG](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/T_GCG.pdf), [TAP/PAIR](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_adaptive_tap_pair.pdf)).
+- **R3 (Capability):** BFCL and τ-bench confirm general tool-use is retained ([table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_capability.pdf)).
+- **R4 (Model coverage):** seven backbones including the September-2025 reasoning model Qwen3-Next-80B.
+
+We believe these results greatly strengthen the significance of our results and improve the overall soundness of the paper. We hope our rebuttal addresses the reviewer's concerns, and we would be grateful for a reconsideration of the score.
+
+---
+
+## GHCC (Rating 5)
+
+We thank the reviewer for their constructive feedback, which helps strengthen our paper. Below, we address the questions they raised.
+
+**1. "Limited applicability to closed models. ODILE needs access to internal representations [...]."**
+Agreed; this is a scope choice, stated explicitly. ODILE is an inner defense for the open-weight / self-hosted regime; API-only deployments use pipeline defenses (Spotlight, instruction-hierarchy, MELON, CaMeL), which ODILE complements rather than replaces. We will add an explicit deployment-scope paragraph in §10.
+
+**2. "Limited model coverage. The evaluation uses mainly Llama-3.3-70B and Qwen-2.5-7B [...] include a newer Qwen model such as Qwen3 or justify the choice [...]."**
+Six backbones plus Qwen3-Next-80B, including Qwen3-8B and Qwen3-32B from the Qwen-3 family. Qwen3-Next is the newest reasoning model the request points to; ODILE transfers ([cross-model](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/T2_crossmodel_AD.pdf), [Qwen3-Next](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_pareto_qnext.pdf)).
+
+**3. "Single-benchmark focus [...] additional benchmarks such as AgentDyn and WASP would strengthen the claims."**
+We add both. **AgentDyn** is a dynamic benchmark on three suites absent from AgentDojo (GitHub, Daily-Life, Shopping; [how it differs](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/examples_pdf/agentdyn_difference.pdf)), where the attack genuinely hijacks the base agent (Qwen3-8B, 22.1%, n=560, trace-validated) and ODILE drives it to 0.0% (Fisher p<1e-12, [table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_agentdyn.pdf)). **WASP** falls to 0/239 verified-tight (0/5805 per paraphrase attempt); our setup runs WASP's [21 attacker goals and injection templates](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/examples_pdf/wasp_attacker_goals.pdf) without the live browser loop, and the full containerized version is a camera-ready commitment ([table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_T_wasp.pdf)).
+
+**4. "No adaptive attack evaluation [...] adaptive attacks that know the adapter, objective, layer range, or masking strategy."**
+We evaluate all four named axes: adapter-aware and layer-range-aware (LoRA-aware GCG with a bypass term at the exact LoRA layers, 0/3); objective-aware (TAP and PAIR with the defense described to the attacker, 0/64 across two backbones); mask-aware (the completion-window mask is a training-time loss localization, with nothing input-side to route around); plus discrete GCG (0/4) and a WASP proxy (0/5805). ([GCG](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/T_GCG.pdf), [TAP/PAIR](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_adaptive_tap_pair.pdf)).
+
+**Q1. "What exactly does '88% benign capability retention' mean? [...] most security papers report benign utility, utility under attack, and ASR separately."**
+It was one specific axis: the calls-user-tool correctness rate on InjecAgent's benign split at Llama-3.3-70B (base = 100%), not a global capability number. We now report absolute numbers with ASR, benign utility, and under-attack utility separated, per backbone ([tables](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_pareto_70b.pdf)).
+
+**Q2. "Explain benign utility loss. Where does the 12% drop come from: malformed tool calls, incomplete chains, wrong answers, or unnecessary refusals?"**
+Of the 12 of 100: none are malformed tool calls, none are incomplete chains, none are wrong answers, and none are refusals; all 12 are format-envelope shifts (the strict-ReAct Action: form becomes a semantically equivalent expression, with correct tool-call content in every case). It is metric-strictness, not capability loss; we will list all 12 in the appendix.
+
+**Q3. "Position against system-level defenses [...] how ODILE compares to defenses like CaMeL [...]."**
+CaMeL is a design-level defense (a privileged/quarantined planner and a capability-checked interpreter), a different layer of the agent stack than ODILE's representation-level intervention, and the two are complementary. We evaluate CaMeL at three scales: Qwen-2.5-14B (it scale-floors, the privileged LLM cannot drive the interpreter, and its 0% ASR is a vacuous emergent jam); Llama-3.3-70B (it runs on two of four suites, while banking and travel crash at an upstream interpreter bug); and Gemini-2.5-flash-lite (all four suites, ~0% ASR but only 18–32% benign utility). CaMeL reaches ~0% ASR wherever its interpreter runs, but on open weights it is brittle and high-tax; ODILE reaches 0% ASR at 1× cost on every backbone.
+
+**Q4. "Compare with simpler sanitization defenses [...] explain when ODILE is preferable to these simpler methods."**
+We re-implemented the firewall faithfully at Llama-3.1-8B. Statically the sanitizer matches ODILE (2.1% ASR), but it costs 6.2pp benign utility and an extra LLM call per tool output, and under adaptive attack it is cracked 15/48 via benign-looking reframes where ODILE holds 0/64 ([firewall table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/T_firewall.pdf), [adaptive table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_adaptive_tap_pair.pdf)). ODILE is preferable when adaptive robustness, zero extra inference cost, and benign-utility preservation matter together, which is the realistic agent-deployment setting.
+
+In addition, we invite the reviewer to consult the rest of our supplementary rebuttal experiments:
+- **R1 (Generalization):** InjecAgent and TensorTrust complete the four-benchmark out-of-distribution set ([InjecAgent](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/T3b_injecagent_crossmodel.pdf), [TensorTrust](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/T4_TT_headline.pdf)).
+- **R3 (Capability):** BFCL and τ-bench confirm general tool-use is retained ([table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_capability.pdf)).
+
+We believe these results greatly strengthen the significance of our results and improve the overall soundness of the paper. We hope our rebuttal addresses the reviewer's concerns, and we would be grateful for a reconsideration of the score.

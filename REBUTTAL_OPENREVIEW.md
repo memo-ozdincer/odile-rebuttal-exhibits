@@ -1,6 +1,6 @@
 # ODILE, OpenReview-ready rebuttal (structured, anonymized)
 
-> **Editing copy for Memo only** (not for distribution). Exhibit links are `{ANON}` placeholders, swap for the anonymous.4open.science base before pasting to OpenReview. Add your `(*)` comments inline and I will do the de-AI prose pass.
+> **Editing copy for Memo only** (not for distribution). Exhibit links are `{ANON}` placeholders. Add your `(*)` comments inline.
 
 **How to use this doc.** Paste one section per reviewer into OpenReview. Exhibit links use the placeholder `{ANON}` = your anonymous.4open.science base URL (e.g. `https://anonymous.4open.science/r/odile-exhibits-XXXX`). Do a find-replace of `{ANON}` once you have the repo ID. NO personal-repo links, NO name/school anywhere. Greeting/closing are formulaic (Simko); concerns are quote-trimmed (`[...]`); each reviewer gets a "see also" R-list of the other experiments.
 
@@ -51,7 +51,7 @@ We add Qwen3-Next-80B-A3B-Thinking (September 2025), a frontier reasoning model 
 Not by trial and error: following circuit-breakers (Zou et al.), mid-to-late layers avoid token-specific representations; we use that single principled band and depth-scale it across all seven backbones with no per-backbone retuning, which is itself why the recipe transfers. A full layer-band ablation is a camera-ready commitment.
 
 In addition, we invite the reviewer to consult the rest of our supplementary rebuttal experiments:
-- **R5 (Defense comparison):** matched-backbone traces vs Meta-SecAlign and a firewall/sanitizer, showing where they break and ODILE holds ([traces]({ANON}/traces_pdf/), [firewall table]({ANON}/T_firewall.pdf)).
+- **R5 (Defense comparison):** matched-backbone traces vs Meta-SecAlign and a firewall/sanitizer, showing where they break and ODILE holds ([traces]({ANON}/traces_pdf/trace_secalign_cracked_vs_odile.pdf), [firewall table]({ANON}/T_firewall.pdf)).
 
 We believe these results greatly strengthen the significance of our results and improve the overall soundness of the paper. We hope our rebuttal addresses the reviewer's concerns, and we would be grateful for a reconsideration of the score.
 
