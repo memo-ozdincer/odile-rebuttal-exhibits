@@ -105,7 +105,7 @@ The worry is that the degenerate (token-soup) output could still trigger a harmf
 - **Validators and tool-call repair:** both act on the emitted call, not on the representation, so they compose on top of ODILE rather than fighting it.
 - **A repair loop that iteratively reformulates the injection** is itself an adaptive attacker, which is exactly the setting we run TAP and PAIR to probe (0/64).
 
-Critically, the jam never produces the attacker action: 0/5805 distinct WASP paraphrases (trace-validated), and any residual `send_money` has a degenerate recipient that never resolves to the attacker IBAN ([trace]({ANON}/traces_pdf/trace_secalign_cracked_vs_odile.pdf)).
+The jam never produces the attacker action: 0/5805 distinct WASP paraphrases, trace-validated ([trace]({ANON}/traces_pdf/trace_secalign_cracked_vs_odile.pdf)).
 
 **Q. "Does the method defend against data-exfiltration attacks where the harmful action looks like normal information retrieval [...]?"**
 Yes. InjecAgent's `ds_base` and `ds_enhanced` families are exactly exfiltration via a legitimate-looking tool call (retrieve X, then email or send it to the attacker); we invite the reviewer to consult the [32 real data-stealing attacks]({ANON}/examples_pdf/injecagent_data_exfil.pdf) (genetic data, saved addresses, financial records sent via `GmailSendEmail`). ODILE drives both families to 0.00% at Llama-3.3-70B ([InjecAgent]({ANON}/T3b_injecagent_crossmodel.pdf)).
