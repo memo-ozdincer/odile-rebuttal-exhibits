@@ -75,3 +75,34 @@
 % outcome stamps
 \newcommand{\cracked}{\textbf{\textcolor{dangerink}{\xmark\ attacker tool fired \,---\, attack succeeds (counts toward ASR)}}}
 \newcommand{\held}{\textbf{\textcolor{safeink}{\cmark\ only the user-task path \,---\, injected action never emitted}}}
+
+% ===== HUD-style trace rendering (ported from hud-python hud_console.py) =====
+% Conventions: step header (turn unit), role badge in a fixed left gutter so
+% "who said what" is unmistakable, tool CALL = arrow + bold name + dim args,
+% tool RESULT = check/cross indented under the call, box the TRACE not the turn,
+% frame color = outcome (gold neutral / red cracked / green defended).
+\definecolor{hudgold}{RGB}{166,118,10}
+\definecolor{hudgreen}{RGB}{42,125,70}
+\definecolor{hudred}{RGB}{176,52,42}
+\definecolor{huddim}{gray}{0.45}
+\definecolor{hudtext}{gray}{0.12}
+\definecolor{rolemodel}{HTML}{2C4A66}   % AGENT badge
+\definecolor{roleuser}{HTML}{1F3A5F}    % USER badge
+\definecolor{roletool}{HTML}{6B6B6B}    % TOOL badge
+% fixed-width left-gutter role badge
+\newcommand{\rbadge}[2]{\colorbox{#1}{\rule[-2.5pt]{0pt}{10pt}\color{white}\sffamily\bfseries\scriptsize\,#2\,}}
+% one turn: badge in a 5.4em gutter, content wraps aligned to its right
+\newcommand{\turn}[3]{\par\smallskip\noindent\makebox[5.4em][l]{\rbadge{#1}{#2}}\hspace{0.4em}\begin{minipage}[t]{\dimexpr\linewidth-6em\relax}#3\end{minipage}\par}
+% step header (gold); the per-turn separator is whitespace, not a rule
+\newcommand{\stephdr}[1]{\par\smallskip\noindent{\color{hudgold}\sffamily\bfseries\footnotesize #1}\par\vspace{-1pt}}
+% tool call: arrow + bold name + dim args (compact name(args) signature)
+\newcommand{\tcall}[2]{{\color{hudgold}$\rightarrow$}\,{\color{hudtext}\ttfamily\bfseries #1}{\color{huddim}\ttfamily(#2)}}
+% tool result, nested under its call; success / error
+\newcommand{\tok}[1]{{\color{hudgreen}\ding{51}}\,{\color{hudtext}\ttfamily\small #1}}
+\newcommand{\terr}[1]{{\color{hudred}\ding{55}}\,{\color{hudtext}\ttfamily\small #1}}
+% dim trailing annotation (why) — for flagging the injection
+\newcommand{\ann}[1]{{\color{huddim}\itshape\# #1}}
+% box the TRACE, not the turn: one frame per trace; #1 = frame color (= outcome)
+\newtcolorbox{tracebox}[2][hudgold]{sharp corners, boxrule=0.9pt, colframe=#1, colback=white,
+  title={#2}, coltitle=white, colbacktitle=#1, fonttitle=\bfseries\footnotesize\sffamily,
+  left=5pt,right=5pt,top=3pt,bottom=4pt}

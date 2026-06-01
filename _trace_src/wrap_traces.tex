@@ -4,10 +4,28 @@
 \usepackage[utf8]{inputenc}
 \usepackage{xcolor}
 \usepackage[most]{tcolorbox}
-\definecolor{orange}{HTML}{b8860b}
-\definecolor{blue}{HTML}{1F3A5F}
-\definecolor{gray}{HTML}{666666}
+\usepackage{pifont}
 \setlength{\parindent}{0pt}
+
+% ---- trace rendering convention (informed by hud-python's terminal formatter) ----
+\definecolor{hudgold}{RGB}{166,118,10}
+\definecolor{huddim}{gray}{0.45}
+\definecolor{rolesys}{HTML}{6B6B6B}
+\definecolor{roleuser}{HTML}{1F3A5F}
+\definecolor{rolemodel}{HTML}{2C4A66}
+\definecolor{roletool}{HTML}{8A6D1A}
+\definecolor{injred}{HTML}{B23A2E}
+\definecolor{injfill}{HTML}{FBEBE8}
+\definecolor{crackred}{HTML}{B22222}
+% fixed-width left-gutter role badge so "who said what" is unmistakable
+\newcommand{\rbadge}[2]{\colorbox{#1}{\rule[-2.5pt]{0pt}{10pt}\color{white}\sffamily\bfseries\scriptsize\,#2\,}}
+% one turn: badge in a fixed gutter, content wraps aligned to its right
+\newcommand{\turn}[3]{\par\smallskip\noindent\makebox[5.2em][l]{\rbadge{#1}{#2}}\hspace{0.4em}\begin{minipage}[t]{\dimexpr\linewidth-5.9em\relax}#3\end{minipage}\par}
+% tool call: arrow + bold name + dim args
+\newcommand{\tcall}[2]{{\color{hudgold}$\rightarrow$}\,\textbf{#1}{\color{huddim}(#2)}}
+% injected attacker span highlight (block-level, wraps)
+\newtcolorbox{injspan}{sharp corners,boxrule=0.8pt,colframe=injred,colback=injfill,left=4pt,right=4pt,top=2pt,bottom=2pt}
+
 \begin{document}
 \input{traces_body.tex}
 \end{document}
