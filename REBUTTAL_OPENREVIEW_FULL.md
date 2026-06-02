@@ -141,7 +141,7 @@ We add defense-aware white-box attacks covering all four named axes, 0 cracks th
 - **Mask-aware:** the completion-window mask is a training-time loss localization, with nothing input-side for the attacker to route around.
 - **Discrete GCG** (Zou et al. 2023; 75 steps): 0/4. The attacker-target cross-entropy plateaus at 10.7–11.0 while the base descends to 0.57 and complies, and does not move to 500 steps on a HarmBench (Mazeika et al. 2024) sweep (base broken on 68% of behaviors).
 
-We do not claim these are the strongest possible attacker; RL-based attacks (Nasr et al. 2025) are planned. Full results: [GCG]({ANON}/T_GCG.pdf), [TAP/PAIR]({ANON}/tab_adaptive_tap_pair.pdf), [loss curve]({ANON}/figures/fig_gcg_loss_curve.pdf).
+Another adaptive experiment we plan to run is a reinforcement-learning-based attack (Nasr et al. 2025). Full results: [GCG]({ANON}/T_GCG.pdf), [TAP/PAIR]({ANON}/tab_adaptive_tap_pair.pdf), [loss curve]({ANON}/figures/fig_gcg_loss_curve.pdf).
 
 **Q1. "What exactly does '88% benign capability retention' mean? [...] most security papers report benign utility, utility under attack, and ASR separately."**
 The 88% is a relative capability-retention figure on AgentDojo (ODILE benign utility as a fraction of the undefended base), which we used to keep the comparison consistent across backbones. We agree absolute numbers are clearer: we now report, per backbone, absolute ASR, benign utility, and under-attack utility separately ([tables]({ANON}/tab_pareto_70b.pdf)). UAU is not a primary metric for this work, since (as above) ODILE jams under attack by design.
