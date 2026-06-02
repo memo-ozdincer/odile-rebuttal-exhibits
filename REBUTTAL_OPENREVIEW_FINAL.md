@@ -1,10 +1,12 @@
 # ODILE, OpenReview-ready rebuttal (full version)
 
-**How to use.** Each reviewer's response is posted to OpenReview as one or more comments (5000-char limit per comment): **FoEk = 3 comments, DefG = 2, GHCC = 3, FSAe = 1**. The italic `*(... comment X of N ...)*` notes mark the split points — do NOT paste those notes; just start a new comment there. Replace `https://anonymous.4open.science/r/odile-anon-exhibits-82D6` with your anonymous.4open.science repo URL once you have the ID (no personal-repo links, no name/school anywhere). Greetings/closings are personalized per reviewer; each reviewer keeps its per-concern answers plus a "see also" R-list. Code tokens are backticked so underscores render; no text-mode LaTeX (OpenReview MathJax is math-mode only). A shared **References** section at the end lists every cited work with a clickable link; post it as a brief final comment in each reviewer thread.
+**How to use.** Each reviewer's response is posted to OpenReview as one or more comments (5000-char limit per comment): **FoEk = 3 comments, DefG = 2, GHCC = 3, FSAe = 1**. The italic `*(... comment X of N ...)*` notes mark the split points — do NOT paste those notes; just start a new comment there. Replace `https://anonymous.4open.science/r/odile-anon-exhibits-82D6` with your anonymous.4open.science repo URL once you have the ID (no personal-repo links, no name/school anywhere). Greetings/closings are personalized per reviewer; each reviewer keeps its per-concern answers plus a "see also" R-list. Code tokens are backticked so underscores render; no text-mode LaTeX (OpenReview MathJax is math-mode only). Each comment begins with a **Title:** line: a one-line TLDR for OpenReview's separate Title field, NOT part of the 5000-char body (do not paste it into the comment box). A shared **References** section at the end lists every cited work with a clickable link; post it as a brief final comment in each reviewer thread.
 
 ---
 
 ## FoEk (Rating 3)
+
+**Title:** We add four out-of-distribution benchmarks plus held-out augmentations to show ODILE generalizes rather than memorizes; ASR drops to ~0 with benign utility preserved; lower ASR than Meta-SecAlign and ReasAlign.
 
 We thank the reviewer: generalization, attack strength, capability breadth, and model recency are indeed the axes we want to showcase performance in. Below, we address the questions they raised.
 
@@ -20,6 +22,8 @@ ODILE trains on AgentDojo (Debenedetti et al. 2024); to show this is a learned d
 On AgentDyn, the base model ODILE is built on is hijacked 22% of the time, so the drop to ≈0 reflects a learned response to harmful intent, not recall. The held-out augmentation isolates this: we take the *exact* AgentDojo injections the adapter trained on and merely re-render their surface (markers removed, or base64-encoded), and ASR stays ≈0 even though the underlying goal is unchanged, which is the opposite of what a defense fit to the training strings would do. On the defense comparison, ODILE also matches ReasAlign's near-zero ASR without its ~13pp benign-utility cost ([comparator](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_comparator_8b.pdf)), and holds far lower ASR than Meta-SecAlign on AgentDojo and InjecAgent ([70B table](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_pareto_70b.pdf)). These benchmarks will be completed across every backbone for the camera-ready release.
 
 *(FoEk is long; post it as 3 comments. End of comment 1 of 3. Comment 2 begins below.)*
+
+**Title:** Defense-aware adaptive attacks (discrete GCG, LoRA-aware GCG, TAP, PAIR) all hold at 0 cracks; BFCL and tau-bench confirm capability is retained; we add the Qwen-3 family, including Qwen3-Next-80B.
 
 **2. "The attack setting is too weak [...]. does not test adversarial attackers aware of the adapter."**
 
@@ -44,6 +48,8 @@ We add the Qwen-3 models, none of which were in the original submission: Qwen3-8
 
 *(End of comment 2 of 3. Comment 3 begins below.)*
 
+**Title:** The layer band is principled (circuit-breaker rationale, transfer-validated), not trial-and-error; plus pointers to our adaptive and generalization exhibits.
+
 **Q. "Why is LoRA only applied on layers 30–55?"**
 
 Not by trial and error: following circuit-breakers (Zou et al.), mid-to-late layers avoid token-specific representations; we use that single principled band and depth-scale it across all seven backbones with no per-backbone retuning, which is itself why the recipe transfers. An adjacent-band check on Llama-3.1-8B (windows L10–20, L12–22, and L20–30, 52 cells each) finds all three suppress ASR to ≈0 while shifting the band later halves under-attack utility (≈10% vs ≈21%), so the deployed mid band is the utility-preserving choice. A full native-objective layer-band sweep across all backbones is a camera-ready commitment.
@@ -56,6 +62,8 @@ We believe these additions directly address the leakage, attack-strength, capabi
 ---
 
 ## FSAe (Rating 7)
+
+**Title:** The worsened banking pairs are structurally ambiguous and excluded by design; MSE vs triplet is a consistency story; the layer band is principled; ODILE is an inner defense for the open-weight regime.
 
 We thank the reviewer for the positive assessment and for precise questions on data curation, loss choice, layer selection, and deployment framing. Below, we address each.
 
@@ -88,6 +96,8 @@ We are happy to add any further detail the reviewer finds useful, and hope these
 
 ## DefG (Rating 4)
 
+**Title:** ODILE's novelty: a representation-level LoRA at 1x cost with the lowest ASR while preserving benign utility; head-to-head vs Meta-SecAlign and the firewall/sanitizer; Table 2 replaced with per-backbone Pareto tables.
+
 We thank the reviewer: defense comparison, a cleaner tradeoff table, cross-framework generalization, and real-loop behavior are the axes we strengthen below.
 
 **1. "The paper should compare more directly against recent model-level defenses such as Meta SecAlign and against strong firewall/sanitizer-style defenses. Could the authors clarify the novelty of ODILE [...]?"**
@@ -106,6 +116,8 @@ ODILE is preferable when adaptive robustness, 1x cost, and benign preservation m
 We replace Table 2 with one table per backbone, each on a single model with a single metric pair (ASR against benign utility): [70B](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_pareto_70b.pdf), [8B](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_pareto_8b.pdf), [Qwen-2.5-7B](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_pareto_q25_7b.pdf), [Qwen-2.5-14B](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_pareto_q25_14b.pdf), [Qwen3-32B](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/tab_pareto_q3_32b.pdf). For camera-ready we will complete the full per-backbone tables and present them as security-vs-utility Pareto curves. On under-attack utility: we report benign (no-attack) utility as the capability axis. Completing the user task while an injection is present is deliberately not ODILE's objective: ODILE jams under attack by design (it never emits the attacker's tool call), so optimizing for task-completion-under-injection would undercut the defense. We therefore report under-attack utility for completeness, though it is not a primary metric for this paper, and we have made this framing explicit in the camera-ready copy.
 
 *(DefG exceeds 5000 characters; post it as 2 comments. End of comment 1 of 2. Comment 2 begins below.)*
+
+**Title:** Four out-of-distribution benchmarks show ODILE generalizes; the jam is by design, not brittleness, and never produces the attacker action while benign tasks still complete; data-exfiltration is defended.
 
 **3. "Single-benchmark focus. The evaluation is centered on AgentDojo [...]."**
 
@@ -137,6 +149,8 @@ We hope the head-to-head comparisons and the cleaner per-backbone tables resolve
 
 ## GHCC (Rating 5)
 
+**Title:** Deliberate open-weight scope; we add the Qwen-3 family; AgentDyn and WASP with benign rates; adaptive attacks across all four axes hold; the 88% is relative AgentDojo capability retention.
+
 We thank the reviewer: deployment scope, model coverage, benchmark breadth, and adaptive robustness are the axes we address below.
 
 **1. "Limited applicability to closed models. ODILE needs access to internal representations [...]."**
@@ -167,6 +181,8 @@ The 88% is a relative capability-retention figure on AgentDojo (ODILE benign uti
 
 *(GHCC is long; post it as 3 comments. End of comment 1 of 3. Comment 2 begins below.)*
 
+**Title:** The 12% is the AgentDojo benign-utility drop (mostly format-envelope, a few over-cautious jams); CaMeL barely runs on open weights and pays a heavy benign-utility cost on a closed model.
+
 **Q2. "Explain benign utility loss. Where does the 12% drop come from: malformed tool calls, incomplete chains, wrong answers, or unnecessary refusals?"**
 
 To clarify, this 12% is the AgentDojo benign-utility drop (relative ~12%, roughly 6pp absolute, concentrated in banking and slack). It is a mix of two modes: (i) format-envelope shifts, where the correct tool call is emitted in a non-canonical wrapper that the strict scorer counts as a miss; and (ii) a few over-cautious jams on harmful-looking-but-benign tasks (e.g. a legitimate large transfer that resembles the attacker pattern). We will catalog every benign failure mode in a dedicated appendix; we are also happy to provide a scrollable exhibit of these traces.
@@ -176,6 +192,8 @@ To clarify, this 12% is the AgentDojo benign-utility drop (relative ~12%, roughl
 CaMeL (Debenedetti et al. 2025) is a design-level defense (a privileged planner plus a capability-checked restricted-Python interpreter), a different layer of the stack than ODILE's representation-level intervention, so the two are complementary. We could not get it to run on open weights for now: on Qwen-2.5-14B the privileged LLM cannot drive the interpreter (benign utility floors at 0%, undefended base 46%, so its 0% ASR is vacuous), and on Llama-3.3-70B only two of four AgentDojo suites complete because the interpreter cannot handle the format-string output the model emits. We therefore ran it on a closed model that can produce usable results, Gemini-2.5-flash-lite, where all four suites complete at ~0% ASR but benign utility is only 18–32% per suite (banking 28–31%, slack 17–29%, workspace 19–22%, travel 0%), well below the benign utility ODILE preserves. For camera-ready we will run CaMeL across all backbones and benchmarks on Gemini and other capable closed models.
 
 *(End of comment 2 of 3. Comment 3 begins below.)*
+
+**Title:** ODILE outperforms the firewall/sanitizer on the security-utility tradeoff and under adaptive attack, because it operates on hidden states rather than surface text.
 
 **Q4. "Compare with simpler sanitization defenses [...] explain when ODILE is preferable to these simpler methods."**
 
