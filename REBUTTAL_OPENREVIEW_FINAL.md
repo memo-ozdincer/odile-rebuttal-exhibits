@@ -1,6 +1,6 @@
 # ODILE, OpenReview-ready rebuttal (full version)
 
-**How to use.** Each reviewer's response is posted to OpenReview as one or more comments (5000-char limit per comment): **FoEk = 3 comments, DefG = 2, GHCC = 3, FSAe = 1**. The italic `*(... comment X of N ...)*` notes mark the split points — do NOT paste those notes; just start a new comment there. Replace `https://anonymous.4open.science/r/odile-anon-exhibits-82D6` with your anonymous.4open.science repo URL once you have the ID (no personal-repo links, no name/school anywhere). Greetings/closings are personalized per reviewer; each reviewer keeps its per-concern answers plus a "see also" R-list. Code tokens are backticked so underscores render; no text-mode LaTeX (OpenReview MathJax is math-mode only). Each comment begins with a **Title:** line: a one-line TLDR for OpenReview's separate Title field, NOT part of the 5000-char body (do not paste it into the comment box). A shared **References** section at the end lists every cited work with a clickable link; post it as a brief final comment in each reviewer thread.
+**How to use.** Each reviewer's response is posted to OpenReview as one or more comments (5000-char limit per comment): **FoEk = 3 comments, DefG = 2, GHCC = 3, FSAe = 1**. The italic `*(... comment X of N ...)*` notes mark the split points — do NOT paste those notes; just start a new comment there. Replace `https://anonymous.4open.science/r/odile-anon-exhibits-82D6` with your anonymous.4open.science repo URL once you have the ID (no personal-repo links, no name/school anywhere). Greetings/closings are personalized per reviewer; each reviewer keeps its per-concern answers plus a "see also" R-list. Code tokens are backticked so underscores render; no text-mode LaTeX (OpenReview MathJax is math-mode only). Each comment begins with a **Title:** line: a one-line TLDR for OpenReview's separate Title field, NOT part of the 5000-char body (do not paste it into the comment box). Each reviewer's section ends with its own **References** list (only the works cited to that reviewer, with clickable links); post it as a brief final comment in that reviewer's thread.
 
 ---
 
@@ -59,6 +59,28 @@ In addition, we invite the reviewer to consult the rest of our supplementary reb
 
 We believe these additions directly address the leakage, attack-strength, capability, and model-recency concerns, and strengthen the soundness of the paper. We would be grateful for a reconsideration of the score.
 
+*(References for this reviewer — post as a brief final comment in this thread.)*
+
+**References**
+- Bhagwatkar et al. (2026). Indirect Prompt Injections: Are Firewalls All You Need, or Stronger Benchmarks? [arXiv:2510.05244](https://arxiv.org/abs/2510.05244).
+- Chao et al. (2024). Jailbreaking Black Box Large Language Models in Twenty Queries (PAIR). [arXiv:2310.08419](https://arxiv.org/abs/2310.08419).
+- Chen et al. (2026). Meta SecAlign: A Secure Foundation LLM Against Prompt Injection Attacks. [arXiv:2507.02735](https://arxiv.org/abs/2507.02735).
+- Debenedetti et al. (2024). AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents. NeurIPS 2024. [arXiv:2406.13352](https://arxiv.org/abs/2406.13352).
+- Evtimov et al. (2025). WASP: Benchmarking Web Agent Security Against Prompt Injection Attacks. [arXiv:2504.18575](https://arxiv.org/abs/2504.18575).
+- Li et al. (2026). AgentDyn: A Dynamic Open-Ended Benchmark for Evaluating Prompt Injection Attacks of Real-World Agent Security Systems. [arXiv:2602.03117](https://arxiv.org/abs/2602.03117).
+- Li et al. (2026). ReasAlign: Reasoning Enhanced Safety Alignment against Prompt Injection Attack. [arXiv:2601.10173](https://arxiv.org/abs/2601.10173).
+- Mazeika et al. (2024). HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal. [arXiv:2402.04249](https://arxiv.org/abs/2402.04249).
+- Mehrotra et al. (2024). Tree of Attacks: Jailbreaking Black-Box LLMs Automatically (TAP). [arXiv:2312.02119](https://arxiv.org/abs/2312.02119).
+- Nasr et al. (2025). The Attacker Moves Second: Stronger Adaptive Attacks Bypass Defenses Against LLM Jailbreaks and Prompt Injections. [arXiv:2510.09023](https://arxiv.org/abs/2510.09023).
+- Patil et al. (2024). Berkeley Function Calling Leaderboard (BFCL). [gorilla.cs.berkeley.edu](https://gorilla.cs.berkeley.edu/leaderboard.html).
+- Qwen Team (2025). Qwen3-Next-80B-A3B-Thinking. [huggingface.co/Qwen/Qwen3-Next-80B-A3B-Thinking](https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Thinking).
+- Toyer et al. (2023). Tensor Trust: Interpretable Prompt Injection Attacks from an Online Game. [arXiv:2311.01011](https://arxiv.org/abs/2311.01011).
+- Yao et al. (2024). τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains. [arXiv:2406.12045](https://arxiv.org/abs/2406.12045).
+- Zhan et al. (2024). InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents. Findings of ACL 2024. [aclanthology.org/2024.findings-acl.624](https://aclanthology.org/2024.findings-acl.624/).
+- Zou et al. (2023). Universal and Transferable Adversarial Attacks on Aligned Language Models (GCG). [arXiv:2307.15043](https://arxiv.org/abs/2307.15043).
+- Zou et al. (2024). Improving Alignment and Robustness with Circuit Breakers. [arXiv:2406.04313](https://arxiv.org/abs/2406.04313).
+
+
 ---
 
 ## FSAe (Rating 7)
@@ -91,6 +113,23 @@ For reference, the rest of our supplementary experiments:
 - **R4 (Model coverage):** seven backbones, including the frontier-agentic open-source Qwen3-Next-80B.
 
 We are happy to add any further detail the reviewer finds useful, and hope these clarifications support maintaining or raising the score.
+
+*(References for this reviewer — post as a brief final comment in this thread.)*
+
+**References**
+- Chao et al. (2024). Jailbreaking Black Box Large Language Models in Twenty Queries (PAIR). [arXiv:2310.08419](https://arxiv.org/abs/2310.08419).
+- Evtimov et al. (2025). WASP: Benchmarking Web Agent Security Against Prompt Injection Attacks. [arXiv:2504.18575](https://arxiv.org/abs/2504.18575).
+- Li et al. (2026). AgentDyn: A Dynamic Open-Ended Benchmark for Evaluating Prompt Injection Attacks of Real-World Agent Security Systems. [arXiv:2602.03117](https://arxiv.org/abs/2602.03117).
+- Mehrotra et al. (2024). Tree of Attacks: Jailbreaking Black-Box LLMs Automatically (TAP). [arXiv:2312.02119](https://arxiv.org/abs/2312.02119).
+- Qwen Team (2025). Qwen3-Next-80B-A3B-Thinking. [huggingface.co/Qwen/Qwen3-Next-80B-A3B-Thinking](https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Thinking).
+- Sun et al. (2024). Massive Activations in Large Language Models. [arXiv:2402.17762](https://arxiv.org/abs/2402.17762).
+- Toyer et al. (2023). Tensor Trust: Interpretable Prompt Injection Attacks from an Online Game. [arXiv:2311.01011](https://arxiv.org/abs/2311.01011).
+- Wallace et al. (2024). The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions. [arXiv:2404.13208](https://arxiv.org/abs/2404.13208).
+- Zhan et al. (2024). InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents. Findings of ACL 2024. [aclanthology.org/2024.findings-acl.624](https://aclanthology.org/2024.findings-acl.624/).
+- Zhu et al. (2025). MELON: Provable Indirect Prompt Injection Defense via Masked Re-Execution and Tool Comparison. [arXiv:2502.05174](https://arxiv.org/abs/2502.05174).
+- Zou et al. (2023). Universal and Transferable Adversarial Attacks on Aligned Language Models (GCG). [arXiv:2307.15043](https://arxiv.org/abs/2307.15043).
+- Zou et al. (2024). Improving Alignment and Robustness with Circuit Breakers. [arXiv:2406.04313](https://arxiv.org/abs/2406.04313).
+
 
 ---
 
@@ -144,6 +183,27 @@ In addition, we invite the reviewer to consult the rest of our supplementary reb
 - **R4 (Model coverage):** seven backbones including the September-2025 frontier-agentic open-source model Qwen3-Next-80B.
 
 We hope the head-to-head comparisons and the cleaner per-backbone tables resolve the comparison and tradeoff concerns. We would be grateful for a reconsideration of the score.
+
+*(References for this reviewer — post as a brief final comment in this thread.)*
+
+**References**
+- Bhagwatkar et al. (2026). Indirect Prompt Injections: Are Firewalls All You Need, or Stronger Benchmarks? [arXiv:2510.05244](https://arxiv.org/abs/2510.05244).
+- Chao et al. (2024). Jailbreaking Black Box Large Language Models in Twenty Queries (PAIR). [arXiv:2310.08419](https://arxiv.org/abs/2310.08419).
+- Chen et al. (2026). Meta SecAlign: A Secure Foundation LLM Against Prompt Injection Attacks. [arXiv:2507.02735](https://arxiv.org/abs/2507.02735).
+- Debenedetti et al. (2024). AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents. NeurIPS 2024. [arXiv:2406.13352](https://arxiv.org/abs/2406.13352).
+- Debenedetti et al. (2025). Defeating Prompt Injections by Design (CaMeL). [arXiv:2503.18813](https://arxiv.org/abs/2503.18813).
+- Evtimov et al. (2025). WASP: Benchmarking Web Agent Security Against Prompt Injection Attacks. [arXiv:2504.18575](https://arxiv.org/abs/2504.18575).
+- Li et al. (2026). AgentDyn: A Dynamic Open-Ended Benchmark for Evaluating Prompt Injection Attacks of Real-World Agent Security Systems. [arXiv:2602.03117](https://arxiv.org/abs/2602.03117).
+- Li et al. (2026). ReasAlign: Reasoning Enhanced Safety Alignment against Prompt Injection Attack. [arXiv:2601.10173](https://arxiv.org/abs/2601.10173).
+- Mehrotra et al. (2024). Tree of Attacks: Jailbreaking Black-Box LLMs Automatically (TAP). [arXiv:2312.02119](https://arxiv.org/abs/2312.02119).
+- Patil et al. (2024). Berkeley Function Calling Leaderboard (BFCL). [gorilla.cs.berkeley.edu](https://gorilla.cs.berkeley.edu/leaderboard.html).
+- Qwen Team (2025). Qwen3-Next-80B-A3B-Thinking. [huggingface.co/Qwen/Qwen3-Next-80B-A3B-Thinking](https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Thinking).
+- Toyer et al. (2023). Tensor Trust: Interpretable Prompt Injection Attacks from an Online Game. [arXiv:2311.01011](https://arxiv.org/abs/2311.01011).
+- Yao et al. (2024). τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains. [arXiv:2406.12045](https://arxiv.org/abs/2406.12045).
+- Zhan et al. (2024). InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents. Findings of ACL 2024. [aclanthology.org/2024.findings-acl.624](https://aclanthology.org/2024.findings-acl.624/).
+- Zhu et al. (2025). MELON: Provable Indirect Prompt Injection Defense via Masked Re-Execution and Tool Comparison. [arXiv:2502.05174](https://arxiv.org/abs/2502.05174).
+- Zou et al. (2023). Universal and Transferable Adversarial Attacks on Aligned Language Models (GCG). [arXiv:2307.15043](https://arxiv.org/abs/2307.15043).
+
 
 ---
 
@@ -207,30 +267,24 @@ In addition, we invite the reviewer to consult the rest of our supplementary reb
 
 We hope the added benchmarks, the adaptive-attack coverage, and the deployment-scope framing address the reviewer's concerns. We would be grateful for a reconsideration of the score.
 
----
+*(References for this reviewer — post as a brief final comment in this thread.)*
 
-## References
-
-*(Shared bibliography for every work cited across the four responses. Post it as a short final comment in each reviewer's thread so the citations are clickable.)*
-
+**References**
 - Bhagwatkar et al. (2026). Indirect Prompt Injections: Are Firewalls All You Need, or Stronger Benchmarks? [arXiv:2510.05244](https://arxiv.org/abs/2510.05244).
 - Chao et al. (2024). Jailbreaking Black Box Large Language Models in Twenty Queries (PAIR). [arXiv:2310.08419](https://arxiv.org/abs/2310.08419).
-- Chen et al. (2026). Meta SecAlign: A Secure Foundation LLM Against Prompt Injection Attacks. [arXiv:2507.02735](https://arxiv.org/abs/2507.02735).
 - Debenedetti et al. (2024). AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents. NeurIPS 2024. [arXiv:2406.13352](https://arxiv.org/abs/2406.13352).
 - Debenedetti et al. (2025). Defeating Prompt Injections by Design (CaMeL). [arXiv:2503.18813](https://arxiv.org/abs/2503.18813).
 - Evtimov et al. (2025). WASP: Benchmarking Web Agent Security Against Prompt Injection Attacks. [arXiv:2504.18575](https://arxiv.org/abs/2504.18575).
 - Hines et al. (2024). Defending Against Indirect Prompt Injection Attacks With Spotlighting. [arXiv:2403.14720](https://arxiv.org/abs/2403.14720).
 - Li et al. (2026). AgentDyn: A Dynamic Open-Ended Benchmark for Evaluating Prompt Injection Attacks of Real-World Agent Security Systems. [arXiv:2602.03117](https://arxiv.org/abs/2602.03117).
-- Li et al. (2026). ReasAlign: Reasoning Enhanced Safety Alignment against Prompt Injection Attack. [arXiv:2601.10173](https://arxiv.org/abs/2601.10173).
 - Mazeika et al. (2024). HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal. [arXiv:2402.04249](https://arxiv.org/abs/2402.04249).
 - Mehrotra et al. (2024). Tree of Attacks: Jailbreaking Black-Box LLMs Automatically (TAP). [arXiv:2312.02119](https://arxiv.org/abs/2312.02119).
 - Nasr et al. (2025). The Attacker Moves Second: Stronger Adaptive Attacks Bypass Defenses Against LLM Jailbreaks and Prompt Injections. [arXiv:2510.09023](https://arxiv.org/abs/2510.09023).
 - Patil et al. (2024). Berkeley Function Calling Leaderboard (BFCL). [gorilla.cs.berkeley.edu](https://gorilla.cs.berkeley.edu/leaderboard.html).
-- Sun et al. (2024). Massive Activations in Large Language Models. [arXiv:2402.17762](https://arxiv.org/abs/2402.17762).
+- Qwen Team (2025). Qwen3-Next-80B-A3B-Thinking. [huggingface.co/Qwen/Qwen3-Next-80B-A3B-Thinking](https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Thinking).
 - Toyer et al. (2023). Tensor Trust: Interpretable Prompt Injection Attacks from an Online Game. [arXiv:2311.01011](https://arxiv.org/abs/2311.01011).
 - Wallace et al. (2024). The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions. [arXiv:2404.13208](https://arxiv.org/abs/2404.13208).
 - Yao et al. (2024). τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains. [arXiv:2406.12045](https://arxiv.org/abs/2406.12045).
 - Zhan et al. (2024). InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents. Findings of ACL 2024. [aclanthology.org/2024.findings-acl.624](https://aclanthology.org/2024.findings-acl.624/).
 - Zhu et al. (2025). MELON: Provable Indirect Prompt Injection Defense via Masked Re-Execution and Tool Comparison. [arXiv:2502.05174](https://arxiv.org/abs/2502.05174).
 - Zou et al. (2023). Universal and Transferable Adversarial Attacks on Aligned Language Models (GCG). [arXiv:2307.15043](https://arxiv.org/abs/2307.15043).
-- Zou et al. (2024). Improving Alignment and Robustness with Circuit Breakers. [arXiv:2406.04313](https://arxiv.org/abs/2406.04313).
