@@ -118,7 +118,7 @@ The worry is that the degenerate (token-soup) output could still trigger a harmf
 - **Validators and tool-call repair:** both act on the emitted call, not on the representation, so they compose on top of ODILE rather than fighting it.
 - **A repair loop that iteratively reformulates the injection** is itself an adaptive attacker, which is exactly the setting we run TAP and PAIR to probe (0/64).
 
-The jam never produces the attacker action: 0/5805 distinct WASP paraphrases, trace-validated ([trace](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/traces_pdf/trace_secalign_cracked_vs_odile.pdf)).
+The jam never produces the attacker action: 0/5805 distinct WASP paraphrases, trace-validated ([trace](https://anonymous.4open.science/r/odile-anon-exhibits-82D6/traces_pdf/trace_secalign_cracked_vs_odile.pdf)). It is attack-specific, not a blanket breakdown: on the benign version of WASP, ODILE still completes the legitimate action (e.g. 93% at Llama-3.3-70B).
 
 **Q. "Does the method defend against data-exfiltration attacks where the harmful action looks like normal information retrieval [...]?"**
 
