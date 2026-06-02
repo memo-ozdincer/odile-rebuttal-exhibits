@@ -6,7 +6,7 @@
 
 ## FoEk (Rating 3)
 
-**Title:** We add four out-of-distribution benchmarks plus held-out augmentations to show ODILE generalizes rather than memorizes; ASR drops to ~0 with benign utility preserved; lower ASR than Meta-SecAlign and ReasAlign.
+**Title:** We add four new benchmarks to show ODILE generalizes
 
 We thank the reviewer: generalization, attack strength, capability breadth, and model recency are indeed the axes we want to showcase performance in. Below, we address the questions they raised.
 
@@ -23,7 +23,7 @@ On AgentDyn, the base model ODILE is built on is hijacked 22% of the time, so th
 
 *(FoEk is long; post it as 3 comments. End of comment 1 of 3. Comment 2 begins below.)*
 
-**Title:** Defense-aware adaptive attacks (discrete GCG, LoRA-aware GCG, TAP, PAIR) all hold at 0 cracks; BFCL and tau-bench confirm capability is retained; we add the Qwen-3 family, including Qwen3-Next-80B.
+**Title:** Stronger adaptive attacks all hold; capability and newer models added
 
 **2. "The attack setting is too weak [...]. does not test adversarial attackers aware of the adapter."**
 
@@ -48,7 +48,7 @@ We add the Qwen-3 models, none of which were in the original submission: Qwen3-8
 
 *(End of comment 2 of 3. Comment 3 begins below.)*
 
-**Title:** The layer band is principled (circuit-breaker rationale, transfer-validated), not trial-and-error; plus pointers to our adaptive and generalization exhibits.
+**Title:** The LoRA layer band is principled, not trial-and-error
 
 **Q. "Why is LoRA only applied on layers 30–55?"**
 
@@ -63,7 +63,7 @@ We believe these additions directly address the leakage, attack-strength, capabi
 
 ## FSAe (Rating 7)
 
-**Title:** The worsened banking pairs are structurally ambiguous and excluded by design; MSE vs triplet is a consistency story; the layer band is principled; ODILE is an inner defense for the open-weight regime.
+**Title:** Clarifying data curation, the loss choice, and layer selection
 
 We thank the reviewer for the positive assessment and for precise questions on data curation, loss choice, layer selection, and deployment framing. Below, we address each.
 
@@ -96,7 +96,7 @@ We are happy to add any further detail the reviewer finds useful, and hope these
 
 ## DefG (Rating 4)
 
-**Title:** ODILE's novelty: a representation-level LoRA at 1x cost with the lowest ASR while preserving benign utility; head-to-head vs Meta-SecAlign and the firewall/sanitizer; Table 2 replaced with per-backbone Pareto tables.
+**Title:** ODILE's novelty and head-to-head defense comparisons
 
 We thank the reviewer: defense comparison, a cleaner tradeoff table, cross-framework generalization, and real-loop behavior are the axes we strengthen below.
 
@@ -117,7 +117,7 @@ We replace Table 2 with one table per backbone, each on a single model with a si
 
 *(DefG exceeds 5000 characters; post it as 2 comments. End of comment 1 of 2. Comment 2 begins below.)*
 
-**Title:** Four out-of-distribution benchmarks show ODILE generalizes; the jam is by design, not brittleness, and never produces the attacker action while benign tasks still complete; data-exfiltration is defended.
+**Title:** ODILE generalizes, and the jam is by design, not brittle
 
 **3. "Single-benchmark focus. The evaluation is centered on AgentDojo [...]."**
 
@@ -149,7 +149,7 @@ We hope the head-to-head comparisons and the cleaner per-backbone tables resolve
 
 ## GHCC (Rating 5)
 
-**Title:** Deliberate open-weight scope; we add the Qwen-3 family; AgentDyn and WASP with benign rates; adaptive attacks across all four axes hold; the 88% is relative AgentDojo capability retention.
+**Title:** Open-weight scope, added models and benchmarks, adaptive robustness
 
 We thank the reviewer: deployment scope, model coverage, benchmark breadth, and adaptive robustness are the axes we address below.
 
@@ -181,7 +181,7 @@ The 88% is a relative capability-retention figure on AgentDojo (ODILE benign uti
 
 *(GHCC is long; post it as 3 comments. End of comment 1 of 3. Comment 2 begins below.)*
 
-**Title:** The 12% is the AgentDojo benign-utility drop (mostly format-envelope, a few over-cautious jams); CaMeL barely runs on open weights and pays a heavy benign-utility cost on a closed model.
+**Title:** Where the benign-utility drop comes from, and CaMeL
 
 **Q2. "Explain benign utility loss. Where does the 12% drop come from: malformed tool calls, incomplete chains, wrong answers, or unnecessary refusals?"**
 
@@ -193,7 +193,7 @@ CaMeL (Debenedetti et al. 2025) is a design-level defense (a privileged planner 
 
 *(End of comment 2 of 3. Comment 3 begins below.)*
 
-**Title:** ODILE outperforms the firewall/sanitizer on the security-utility tradeoff and under adaptive attack, because it operates on hidden states rather than surface text.
+**Title:** Why ODILE is preferable to a firewall/sanitizer
 
 **Q4. "Compare with simpler sanitization defenses [...] explain when ODILE is preferable to these simpler methods."**
 
