@@ -1,0 +1,862 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2023.8.23)  1 JUN 2026 13:00
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**wrap_traces.tex
+(./wrap_traces.tex
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/base/article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/base/size10.clo
+File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+)
+\c@part=\count179
+\c@section=\count180
+\c@subsection=\count181
+\c@subsubsection=\count182
+\c@paragraph=\count183
+\c@subparagraph=\count184
+\c@figure=\count185
+\c@table=\count186
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count187
+\Gm@cntv=\count188
+\c@Gm@tempcnt=\count189
+\Gm@bindingoffset=\dimen139
+\Gm@wd@mp=\dimen140
+\Gm@odd@mp=\dimen141
+\Gm@even@mp=\dimen142
+\Gm@layoutwidth=\dimen143
+\Gm@layoutheight=\dimen144
+\Gm@layouthoffset=\dimen145
+\Gm@layoutvoffset=\dimen146
+\Gm@dimlist=\toks16
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/base/fontenc.sty
+Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/base/inputenc.sty
+Package: inputenc 2020/08/01 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2020/10/09 version 4.42 text color boxes
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/la
+tex/pgf/basiclayer/pgf.sty
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/la
+tex/pgf/utilities/pgfrcs.sty
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks19
+\pgfutil@tempdima=\dimen147
+\pgfutil@tempdimb=\dimen148
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/utilities/pgfutil-common-lists.tex))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box47
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/utilities/pgfrcs.code.tex
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/pgf.revision.tex)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
+))
+Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/la
+tex/pgf/basiclayer/pgfcore.sty
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/graphics/graphicx.sty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/graphics/graphics.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+)
+\Gin@req@height=\dimen149
+\Gin@req@width=\dimen150
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/la
+tex/pgf/systemlayer/pgfsys.sty
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks20
+\pgfkeys@temptoks=\toks21
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks22
+))
+\pgf@x=\dimen151
+\pgf@y=\dimen152
+\pgf@xa=\dimen153
+\pgf@ya=\dimen154
+\pgf@xb=\dimen155
+\pgf@yb=\dimen156
+\pgf@xc=\dimen157
+\pgf@yc=\dimen158
+\pgf@xd=\dimen159
+\pgf@yd=\dimen160
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count190
+\c@pgf@countb=\count191
+\c@pgf@countc=\count192
+\c@pgf@countd=\count193
+\t@pgf@toka=\toks23
+\t@pgf@tokb=\toks24
+\t@pgf@tokc=\toks25
+\pgf@sys@id@count=\count194
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfsyssoftpath@smallbuffer@items=\count195
+\pgfsyssoftpath@bigbuffer@items=\count196
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/math/pgfmath.code.tex
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/math/pgfmathcalc.code.tex
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/math/pgfmathutil.code.tex)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen161
+\pgfmath@count=\count197
+\pgfmath@box=\box48
+\pgfmath@toks=\toks26
+\pgfmath@stack@operand=\toks27
+\pgfmath@stack@operation=\toks28
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/math/pgfmathfunctions.code.tex
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/math/pgfmathfunctions.basic.code.tex)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/math/pgfmathfunctions.trigonometric.code.tex)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/math/pgfmathfunctions.random.code.tex)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/math/pgfmathfunctions.comparison.code.tex)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/math/pgfmathfunctions.base.code.tex)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/math/pgfmathfunctions.round.code.tex)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/math/pgfmathfunctions.misc.code.tex)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/math/pgfmathfunctions.integerarithmetics.code.tex)))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count198
+))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/math/pgfint.code.tex)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@picminx=\dimen162
+\pgf@picmaxx=\dimen163
+\pgf@picminy=\dimen164
+\pgf@picmaxy=\dimen165
+\pgf@pathminx=\dimen166
+\pgf@pathmaxx=\dimen167
+\pgf@pathminy=\dimen168
+\pgf@pathmaxy=\dimen169
+\pgf@xx=\dimen170
+\pgf@xy=\dimen171
+\pgf@yx=\dimen172
+\pgf@yy=\dimen173
+\pgf@zx=\dimen174
+\pgf@zy=\dimen175
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@path@lastx=\dimen176
+\pgf@path@lasty=\dimen177
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@shorten@end@additional=\dimen178
+\pgf@shorten@start@additional=\dimen179
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfpic=\box49
+\pgf@hbox=\box50
+\pgf@layerbox@main=\box51
+\pgf@picture@serial@count=\count199
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgflinewidth=\dimen180
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@pt@x=\dimen181
+\pgf@pt@y=\dimen182
+\pgf@pt@temp=\dimen183
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowsep=\dimen184
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@max=\dimen185
+\pgf@sys@shading@range@num=\count266
+\pgf@shadingcount=\count267
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfexternal@startupbox=\box52
+))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfnodeparttextbox=\box53
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/la
+tex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@nodesepstart=\dimen186
+\pgf@nodesepend=\dimen187
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/la
+tex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
+))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/tools/verbatim.sty
+Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks29
+\verbatim@line=\toks30
+\verbatim@in@stream=\read3
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks31
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count268
+)
+\tcb@titlebox=\box54
+\tcb@upperbox=\box55
+\tcb@lowerbox=\box56
+\tcb@phantombox=\box57
+\c@tcbbreakpart=\count269
+\c@tcblayer=\count270
+\c@tcolorbox@number=\count271
+\tcb@temp=\box58
+\tcb@temp=\box59
+\tcb@temp=\box60
+\tcb@temp=\box61
+\tcb@out=\write4
+\tcb@record@out=\write5
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/tcolorbox/tcbraster.code.tex
+Library (tcolorbox): 'tcbraster.code.tex' version '4.42'
+\c@tcbrastercolumn=\count272
+\c@tcbrasterrow=\count273
+\c@tcbraster=\count274
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/tcolorbox/tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '4.42'
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/la
+tex/pgf/frontendlayer/tikz.sty
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/la
+tex/pgf/utilities/pgffor.sty
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/la
+tex/pgf/utilities/pgfkeys.sty
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/utilities/pgfkeys.code.tex))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/la
+tex/pgf/math/pgfmath.sty
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/math/pgfmath.code.tex))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/utilities/pgffor.code.tex
+Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen188
+\pgffor@skip=\dimen189
+\pgffor@stack=\toks32
+\pgffor@toks=\toks33
+))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@plot@mark@count=\count275
+\pgfplotmarksize=\dimen190
+)
+\tikz@lastx=\dimen191
+\tikz@lasty=\dimen192
+\tikz@lastxsaved=\dimen193
+\tikz@lastysaved=\dimen194
+\tikz@lastmovetox=\dimen195
+\tikz@lastmovetoy=\dimen196
+\tikzleveldistance=\dimen197
+\tikzsiblingdistance=\dimen198
+\tikz@figbox=\box62
+\tikz@figbox@bg=\box63
+\tikz@tempbox=\box64
+\tikz@tempbox@bg=\box65
+\tikztreelevel=\count276
+\tikznumberofchildren=\count277
+\tikznumberofcurrentchild=\count278
+\tikz@fig@count=\count279
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfmatrixcurrentrow=\count280
+\pgfmatrixcurrentcolumn=\count281
+\pgf@matrix@numberofcolumns=\count282
+)
+\tikz@expandcount=\count283
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
+\tcb@waterbox=\box66
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/tcolorbox/tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '4.42'
+))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/tcolorbox/tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '4.42'
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/oberdiek/pdfcol.sty
+Package: pdfcol 2019/12/29 v1.6 Handle new color stacks for pdfTeX (HO)
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+))
+Package pdfcol Info: New color stack `tcb@breakable' = 1 on input line 23.
+\tcb@testbox=\box67
+\tcb@totalupperbox=\box68
+\tcb@totallowerbox=\box69
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/tcolorbox/tcbhooks.code.tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '4.42'
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/tcolorbox/tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '4.42'
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/amsmath/amsmath.sty
+Package: amsmath 2020/09/23 v2.17i AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks34
+\ex@=\dimen199
+))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen256
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count284
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count285
+\leftroot@=\count286
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count287
+\DOTSCASE@=\count288
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box70
+\strutbox@=\box71
+\big@size=\dimen257
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count289
+\c@MaxMatrixCols=\count290
+\dotsspace@=\muskip16
+\c@parentequation=\count291
+\dspbrk@lvl=\count292
+\tag@help=\toks35
+\row@=\count293
+\column@=\count294
+\maxfields@=\count295
+\andhelp@=\toks36
+\eqnshift@=\dimen258
+\alignsep@=\dimen259
+\tagshift@=\dimen260
+\tagwidth@=\dimen261
+\totwidth@=\dimen262
+\lineht@=\dimen263
+\@envbody=\toks37
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks38
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
+))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/tcolorbox/tcbfitting.code.tex
+Library (tcolorbox): 'tcbfitting.code.tex' version '4.42'
+\tcbfitdim=\dimen264
+\tcb@lowerfitdim=\dimen265
+\tcb@upperfitdim=\dimen266
+\tcb@cur@hbadness=\count296
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/tcolorbox/tcbxparse.code.tex
+Library (tcolorbox): 'tcbxparse.code.tex' version '4.42'
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/l3packages/xparse/xparse.sty
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/l3kernel/expl3.sty
+Package: expl3 2021-02-18 L3 programming layer (loader) 
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count297
+\l__pdf_internal_box=\box72
+))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/l3packages/xparse/xparse-2020-10-01.sty
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/l3packages/xparse/xparse-generic.tex))))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/tcolorbox/tcblistingsutf8.code.tex
+Library (tcolorbox): 'tcblistingsutf8.code.tex' version '4.42'
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/tcolorbox/tcblistings.code.tex
+Library (tcolorbox): 'tcblistings.code.tex' version '4.42'
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/listings/listings.sty
+\lst@mode=\count298
+\lst@gtempboxa=\box73
+\lst@token=\toks39
+\lst@length=\count299
+\lst@currlwidth=\dimen267
+\lst@column=\count300
+\lst@pos=\count301
+\lst@lostspace=\dimen268
+\lst@width=\dimen269
+\lst@newlines=\count302
+\lst@lineno=\count303
+\lst@maxwidth=\dimen270
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count304
+\lst@skipnumbers=\count305
+\lst@framebox=\box74
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/tcolorbox/tcblistingscore.code.tex
+Library (tcolorbox): 'tcblistingscore.code.tex' version '4.42'
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/tcolorbox/tcbprocessing.code.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '4.42'
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/tools/shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+))
+\c@tcblisting=\count306
+))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/listingsutf8/listingsutf8.sty
+Package: listingsutf8 2019-12-10 v1.5 Allow UTF-8 in listings input (HO)
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/ge
+neric/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+))))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/tcolorbox/tcbexternal.code.tex
+Library (tcolorbox): 'tcbexternal.code.tex' version '4.42'
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/tcolorbox/tcbmagazine.code.tex
+Library (tcolorbox): 'tcbmagazine.code.tex' version '4.42'
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/tcolorbox/tcbvignette.code.tex
+Library (tcolorbox): 'tcbvignette.code.tex' version '4.42'
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-site/tex/ge
+neric/pgf/libraries/pgflibraryfadings.code.tex
+File: pgflibraryfadings.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/tcolorbox/tcbposter.code.tex
+Library (tcolorbox): 'tcbposter.code.tex' version '4.42'
+))
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/psnfss/pifont.sty
+Package: pifont 2020/03/25 PSNFSS-v9.3 Pi font support (SPQR) 
+LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
+
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
+
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/psnfss/upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+)) (./wrap_traces.aux)
+\openout1 = `wrap_traces.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(36.135pt, 578.16pt, 36.135pt)
+* v-part:(T,H,B)=(36.135pt, 939.51001pt, 36.135pt)
+* \paperwidth=650.43pt
+* \paperheight=1011.78pt
+* \textwidth=578.16pt
+* \textheight=939.51001pt
+* \oddsidemargin=-36.135pt
+* \evensidemargin=-36.135pt
+* \topmargin=-73.135pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/co
+ntext/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count307
+\scratchdimen=\dimen271
+\scratchbox=\box75
+\nofMPsegments=\count308
+\nofMParguments=\count309
+\everyMPshowfont=\toks40
+\MPscratchCnt=\count310
+\MPscratchDim=\dimen272
+\MPnumerator=\count311
+\makeMPintoPDFobject=\count312
+\everyMPtoPDFconversion=\toks41
+)
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\c@lstlisting=\count313
+ (./traces_body.tex
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
+.
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/base/t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 7
+.
+
+(/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
+tex/base/t1cmss.fd
+File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]$\OMS/cmsy/m/n/8 !$[]\T1/cmr/bx/n/8 send_money[]\T1/cmr/m/n/8 (\T1/cmtt/m/n/8
+ "recipient": "US133000000121212121212", "amount": 30000, "subject": "Bill paym
+ent for December
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+\T1/cmtt/m/it/8 ' ' ' ' ' ' ' ' ' - ' - ' ' - - ' ' - - - ' ' - - - - - - - - -
+ - - - - - - - - - - - ' - - - - - - - - - - - - -
+ []
+
+[1
+
+{/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/var/lib/texmf/fonts/map/pdf
+tex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+\T1/cmtt/m/it/8 Ld L Ld Ld Ld Ld L Ld Ld L Ld L Ld L Ld Ld Ld L Ld Lh Lh Lh Lh 
+Lh Lh Lh Lh L Lh Lh Lh Lh Lh Lh Lh Lh Lh L Lh Lh Lh
+ []
+
+[2
+
+]) (_out/wrap_traces.aux) ) 
+Here is how much of TeX's memory you used:
+ 19791 strings out of 480884
+ 432901 string characters out of 5900692
+ 736624 words of memory out of 5000000
+ 36672 multiletter control sequences out of 15000+600000
+ 415606 words of font info for 51 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 112i,8n,116p,609b,1029s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/
+usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</cvmfs/soft.comp
+utecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy8.pfb></cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share
+/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></cvmfs/soft.computecanada
+.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx
+0900.pfb></cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-di
+st/fonts/type1/public/cm-super/sfit0800.pfb></cvmfs/soft.computecanada.ca/gento
+o/2023/x86-64-v3/usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb>
+</cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/fonts/
+type1/public/cm-super/sfrm1000.pfb></cvmfs/soft.computecanada.ca/gentoo/2023/x8
+6-64-v3/usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx0700.pfb></cvmfs/s
+oft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/fonts/type1/pub
+lic/cm-super/sfti0800.pfb></cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/u
+sr/share/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb>
+Output written on _out/wrap_traces.pdf (2 pages, 179719 bytes).
+PDF statistics:
+ 87 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 157 words of extra memory for PDF output out of 10000 (max. 10000000)
+

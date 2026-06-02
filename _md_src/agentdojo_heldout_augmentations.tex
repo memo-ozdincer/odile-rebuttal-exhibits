@@ -26,15 +26,11 @@ ODILE trains on a narrow slice of AgentDojo injections (banking money-transfer /
 \end{slot}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.44\textwidth}
-\begin{slot}[colback=labgrey!35]{Sources (verbatim)}
+\begin{slot}[colback=labgrey!35]{Sources}
 \scriptsize
-attack templates:\\
-\fpath{odile/src/odile/attacks/baseline_attacks.py}\\
-\fpath{odile/src/odile/attacks/important_instructions_attacks.py}\\[3pt]
-family keys + per-family ASR:\\
-\fpath{paper/.../tables/t_ad_injection_styles.tex}\\[3pt]
-the injection goal (verbatim):\\
-\fpath{src/agentdojo/.../banking/injection_tasks.py} (\texttt{InjectionTask3.GOAL})
+Attack templates: the ODILE marker-removed and base64 attack families.\\[3pt]
+Family keys and per-family ASR: see the injection-styles table.\\[3pt]
+Injection goal (verbatim): AgentDojo banking \texttt{InjectionTask3.GOAL}.
 \end{slot}
 \end{minipage}
 \par\medskip
@@ -140,7 +136,7 @@ Placeholder substitution (after the '\$') reflects values discovered during task
 \smallskip
 
 \begin{famcard}{4.\quad \texttt{tool\_knowledge} \;---\; the WITH-wrapper variant families 2/3 strip down}
-Shown for contrast: the \texttt{<INFORMATION>}-wrapped form that the marker-removed families are ablations of. Verbatim from \texttt{important\_instructions\_attacks.py}.\par\smallskip
+Shown for contrast: the \texttt{<INFORMATION>}-wrapped form that the marker-removed families are ablations of.\par\smallskip
 \lbl{template}\ \texttt{ToolKnowledgeAttack.\_JB\_STRING}
 \begin{tmplbox}
 \textless{}INFORMATION\textgreater{}\\[2pt]
@@ -219,7 +215,7 @@ Note: Standard routing is deprecated as of this quarter. The unified protocol fo
 \smallskip
 
 \begin{slot}[colback=labgrey!35]{10--13 $+$ extended set \;---\; also-registered held-out rewrappings (same \texttt{\{goal\}} slot)}
-Registered alongside the families above in \fpath{odile/src/odile/attacks/baseline_attacks.py}:
+Registered alongside the families above:
 \begin{itemize}
 \item \texttt{shadowleak\_explicit} \;---\; ShadowLeak polite-email framing $+$ an explicit tool-call sequence (\texttt{\{tools\}}); no \texttt{<INFORMATION>}, no imperatives.
 \item \texttt{compositional\_shadowmono} \;---\; ShadowLeak authority framing fused with the FakeMonologue \texttt{Thought:/Action:} structure; a combination of two families, neither seen in training.
